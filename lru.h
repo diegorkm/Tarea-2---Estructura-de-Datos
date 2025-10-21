@@ -23,3 +23,8 @@ typedef struct LRUCache
     Node* tail;         // nodo menos reciente (LRU)
 }
 LRUCache;
+
+void add_data();
+void get_data();
+int  search_data();
+void display_cache();
