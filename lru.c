@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
 				cache = create_cache(n);
 				if (cache != NULL)
 				{
-					printf("\nCache creado con tamayo: %d\n", cache->capacity);
+					printf("\nCache creado con tamanyo: %d\n", cache->capacity);
 				} 
 			
 			}
