@@ -1,3 +1,6 @@
+#ifndef LRU_H
+#define LRU_H
+
 #include <stdio.h>
 #include <stdlib.h> 
 #include <string.h> 
