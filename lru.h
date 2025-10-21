@@ -24,8 +24,11 @@ typedef struct LRUCache
 }
 LRUCache;
 
-
-
-
+LRUCache* create_cache();
+void add_data();
+void get_data();
+int  search_data();
+void display_cache();
+void free_cache();
 
 #endif
