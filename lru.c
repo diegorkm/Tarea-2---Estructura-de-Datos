@@ -42,6 +42,11 @@ int main(int argc, char* argv[])
 			printf("\nLetra %c anyadida al cache\n", letra);
 		}
 
+		if (strcmp(comando, "search") == 0)
+		{
+			printf("\nEl dato esta en la posicion:\n");
+		}
+
 		if (strcmp(comando, "all") == 0)
 		{
 			printf("\nMostrando el contenido del cache: \n");
