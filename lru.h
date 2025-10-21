@@ -5,6 +5,8 @@
 #include <stdlib.h> 
 #include <string.h> 
 
+void menu();
+
 typedef struct Node
 {
     char data; 

@@ -4,8 +4,6 @@
 #include <stdbool.h>
 
 
-void menu();
-
 int main(int argc, char* argv[]) 
 {
 	int n, ejecutando=1, contador=0;
