@@ -26,7 +26,7 @@ int main(int argc, char* argv[])
 				cache = create_cache(n);
 				if (cache != NULL)
 				{
-					printf("\nCache creado con tamaño: %d\n", cache->capacity);
+					printf("\nCache creado con tamayo: %d\n", cache->capacity);
 				} 
 			
 			}
@@ -39,7 +39,7 @@ int main(int argc, char* argv[])
 		if (strcmp(comando, "add") == 0)
 		{
 			scanf(" %c", &letra);
-			printf("\nLetra %c añadida al cache\n", letra);
+			printf("\nLetra %c anyadida al cache\n", letra);
 		}
 
 		if (strcmp(comando, "all") == 0)
