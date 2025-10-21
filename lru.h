@@ -24,7 +24,7 @@ typedef struct LRUCache
 }
 LRUCache;
 
-LRUCache* create_cache();
+LRUCache* create_cache(int capacity);
 void menu();
 void add_data();
 void get_data();
