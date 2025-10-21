@@ -23,13 +23,13 @@
 
 LRUCache* create_cache(int capacity){
     if (capacity < 5){
-        printf("El tamaño minimo del caché es 5.\n");
+        printf("El tamanyo minimo del cache es 5.\n");
         return NULL;
     }
 
     LRUCache* cache = (LRUCache*) malloc(sizeof(LRUCache));
     if (cache == NULL) {
-        printf("Error al asignar memoria para el caché.\n");
+        printf("Error al asignar memoria para el cache.\n");
         return NULL;
     }
 
