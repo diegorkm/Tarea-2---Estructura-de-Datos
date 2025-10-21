@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <stdbool.h>
 #include "lru.h"
 
 
 int main(int argc, char* argv[]) 
 {
-	int n, ejecutando=1, contador=0;
+	int n, ejecutando=1;
 	char letra, comando[7];
-
+	LRUCache* cache = NULL;
+	
 	menu();
 
 	while (ejecutando)
@@ -18,11 +20,15 @@ int main(int argc, char* argv[])
 
 		if (strcmp(comando, "create") == 0)
 		{
-			if (contador == 0)
+			if (cache == NULL)
 			{
 				scanf("%d", &n);
-				printf("\nCache creado con tamanyo: %d\n", n);
-				contador = 1;
+				cache = create_cache(n);
+				if (cache != NULL)
+				{
+					printf("\nCache creado con tamaño: %d\n", cache->capacity);
+				} 
+			
 			}
 			else
 			{
@@ -33,7 +39,7 @@ int main(int argc, char* argv[])
 		if (strcmp(comando, "add") == 0)
 		{
 			scanf(" %c", &letra);
-			printf("\nLetra %c anyadida al cache\n", letra);
+			printf("\nLetra %c añadida al cache\n", letra);
 		}
 
 		if (strcmp(comando, "all") == 0)
