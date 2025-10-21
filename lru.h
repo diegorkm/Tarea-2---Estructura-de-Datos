@@ -5,7 +5,7 @@
 #include <stdlib.h> 
 #include <string.h> 
 
-void menu();
+
 
 typedef struct Node
 {
@@ -25,6 +25,7 @@ typedef struct LRUCache
 LRUCache;
 
 LRUCache* create_cache();
+void menu();
 void add_data();
 void get_data();
 int  search_data();
