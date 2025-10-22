@@ -66,7 +66,7 @@ int main(int argc, char* argv[])
 
 		if (strcmp(comando, "all") == 0)
 		{
-			printf("\nMostrando el contenido del cache: \n");
+			display_cache(cache);
 		}
 
 		if (strcmp(comando, "get") == 0)
