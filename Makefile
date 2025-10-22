@@ -2,7 +2,7 @@
 # Variables de Configuración
 # =================================================================
 
-TARGET = lru_app
+TARGET = lru
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -g
 
