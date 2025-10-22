@@ -7,7 +7,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -g
 
 # 🆕 Carpetas de Salida
-BIN_DIR = bin
+BIN_DIR = .
 OBJ_DIR = obj
 
 # Archivos fuente (.c)
