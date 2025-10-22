@@ -44,7 +44,24 @@ int main(int argc, char* argv[])
 
 		if (strcmp(comando, "search") == 0)
 		{
-			printf("\nEl dato esta en la posicion:\n");
+			char buscar_letra;
+			scanf(" %c", &buscar_letra);
+			if (cache == NULL)
+			{
+				printf("\nError: El cache no ha sido creado. Use 'create <n>'.\n");
+			}
+			else
+			{
+				int posicion = search_cache(cache, buscar_letra);
+				if (posicion != -1)
+				{
+					printf("\nEl dato %c está presente en la posición %d del cache.\n", buscar_letra, posicion);
+				}
+				else 
+				{
+					printf("\nEl dato %c no está presente. Devuelve %d.\n", buscar_letra, posicion);
+				}
+			}
 		}
 
 		if (strcmp(comando, "all") == 0)

@@ -29,7 +29,7 @@ Node* create_node(char data);
 void menu();
 void add_data();
 void get_data();
-int  search_data();
+int search_cache(LRUCache* cache, char data);
 void display_cache();
 void free_cache();
 
