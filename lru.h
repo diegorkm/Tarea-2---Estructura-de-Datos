@@ -31,7 +31,7 @@ void remove_node(LRUCache* cache, Node* node);
 void add_inicio(LRUCache* cache, Node* node);
 void menu();
 void add_data(LRUCache* cache, char data);
-void get_data();
+void get_data(LRUCache* cache, char data);
 int search_cache(LRUCache* cache, char data);
 void display_cache(LRUCache* cache);
 void free_cache();
