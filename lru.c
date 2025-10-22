@@ -72,6 +72,7 @@ int main(int argc, char* argv[])
 		{
 			scanf(" %c", &letra);
 			printf("\nSe ha utilizado: %c\n", letra);
+			get_data(cache, letra);
 		}
 
 		if (strcmp(comando, "exit") == 0)
