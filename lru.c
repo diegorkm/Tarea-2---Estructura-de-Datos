@@ -6,8 +6,8 @@
 
 int main(int argc, char* argv[]) 
 {
-	int n, ejecutando=1;
-	char letra, comando[7];
+	int n, ejecutando=1, posicion;
+	char letra, comando[7], buscar_letra;
 	LRUCache* cache = NULL;
 	
 	menu();
@@ -43,7 +43,6 @@ int main(int argc, char* argv[])
 
 		if (strcmp(comando, "search") == 0)
 		{
-			char buscar_letra;
 			scanf(" %c", &buscar_letra);
 			if (cache == NULL)
 			{
@@ -51,7 +50,7 @@ int main(int argc, char* argv[])
 			}
 			else
 			{
-				int posicion = search_cache(cache, buscar_letra);
+				posicion = search_cache(cache, buscar_letra);
 				if (posicion != -1)
 				{
 					printf("\nEl dato %c esta presente en la posicion %d del cache.\n", buscar_letra, posicion);
