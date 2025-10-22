@@ -78,6 +78,7 @@ int main(int argc, char* argv[])
 		if (strcmp(comando, "exit") == 0)
 		{
 			printf("\nLiberando cache y saliendo del programa\n");
+			free_cache(cache);
 			ejecutando = 0;
 		}
 	}
