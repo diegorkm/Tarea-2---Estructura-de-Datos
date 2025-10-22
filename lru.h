@@ -26,6 +26,9 @@ LRUCache;
 
 LRUCache* create_cache(int capacity);
 Node* create_node(char data);
+Node* buscar_nodo(LRUCache* cache, char data);
+void remove_node(LRUCache* cache, Node* node);
+void add_inicio(LRUCache* cache, Node* node);
 void menu();
 void add_data(LRUCache* cache, char data);
 void get_data();
