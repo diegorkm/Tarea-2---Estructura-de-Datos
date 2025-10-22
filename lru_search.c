@@ -7,23 +7,24 @@
  * @return int La posición del dato (1-basada) si se encuentra, o -1 si no está.
  */
 
-int search_cache(LRUCache* cache, char data) 
+int search_cache(LRUCache* cache, char data)
 {
-    if (cache == NULL) 
+    int position;
+    if (cache == NULL)
     {
         return -1;
     }
 
     Node* current = cache->head;
-    int position = 1; // La posición se cuenta desde 1 (el head es la posición 1).
+    position = 1; // La posición se cuenta desde 1 (el head es la posición 1).
 
     while (current != NULL) // Recorre la lista enlazada desde el MRU (head) hasta el LRU (tail).
     {
-        if (current->data == data) 
+        if (current->data == data)
         {
             return position;  //Dato encontrado, devuelve la posición.
         }
-        current = current->next; 
+        current = current->next;
         position++;
     }
 

@@ -30,7 +30,7 @@ void menu();
 void add_data(LRUCache* cache, char data);
 void get_data();
 int search_cache(LRUCache* cache, char data);
-void display_cache();
+void display_cache(LRUCache* cache)
 void free_cache();
 
 #endif
