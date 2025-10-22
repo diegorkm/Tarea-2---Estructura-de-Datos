@@ -37,8 +37,16 @@ int main(int argc, char* argv[])
 
 		if (strcmp(comando, "add") == 0)
 		{
-			scanf(" %c", &letra);
-			printf("\nLetra %c anyadida al cache\n", letra);
+			if (cache == NULL)
+			{
+				printf("\nError: El cache no ha sido creado. Use 'create <n>'.\n");
+				continue;
+			}
+			else
+			{
+				scanf(" %c", &letra);
+				add_data(cache, letra);
+			}
 		}
 
 		if (strcmp(comando, "search") == 0)
