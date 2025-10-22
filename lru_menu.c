@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include "lru.h"
 
 void menu()
