@@ -7,7 +7,7 @@ CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -g
 
 # 🆕 Carpetas de Salida
-BIN_DIR = bin
+BIN_DIR = ./
 OBJ_DIR = obj
 
 # Archivos fuente (.c)
@@ -47,7 +47,7 @@ $(OBJ_DIR)/%.o: %.c lru.h
 
 # 🆕 Regla 'clean' limpia las carpetas de salida
 clean:
-	rm -rf $(OBJ_DIR) $(BIN_DIR)
+	rm -rf $(OBJ_DIR)
 
 run: all
 	./$(BIN_DIR)/$(TARGET)
