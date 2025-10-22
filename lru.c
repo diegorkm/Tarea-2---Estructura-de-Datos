@@ -54,11 +54,11 @@ int main(int argc, char* argv[])
 				int posicion = search_cache(cache, buscar_letra);
 				if (posicion != -1)
 				{
-					printf("\nEl dato %c está presente en la posición %d del cache.\n", buscar_letra, posicion);
+					printf("\nEl dato %c esta presente en la posicion %d del cache.\n", buscar_letra, posicion);
 				}
 				else 
 				{
-					printf("\nEl dato %c no está presente. Devuelve %d.\n", buscar_letra, posicion);
+					printf("\nEl dato %c no esta presente. Devuelve %d.\n", buscar_letra, posicion);
 				}
 			}
 		}
