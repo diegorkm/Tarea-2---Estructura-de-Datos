@@ -11,7 +11,7 @@ BIN_DIR = bin
 OBJ_DIR = obj
 
 # Archivos fuente (.c)
-SRCS = lru.c lru_add.c lru_add_buscar_nodo.c lru_add_inicio.c lru_add_remove_node.c lru_all.c lru_get.c lru_menu.c lru_node_create.c lru_search.c
+SRCS = lru.c lru_add.c lru_add_buscar_nodo.c lru_add_inicio.c lru_add_remove_node.c lru_all.c lru_get.c lru_menu.c lru_node_create.c lru_search.c lru_free.c
 
 # 🆕 Archivos objeto con la ruta de la carpeta obj/
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.c=.o))
