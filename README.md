@@ -148,5 +148,4 @@ El sistema incluye validaciones para:
 
 ---
 
-**Fecha**: Octubre 2024  
-**Versión**: 1.0
+**Fecha**: Octubre 2025  

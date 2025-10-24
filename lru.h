@@ -3,7 +3,7 @@
  * @brief Archivo de cabecera principal para el sistema de Caché LRU.
  *
  * Contiene las definiciones de las estructuras de datos (Node y LRUCache) y
- * los prototipos de todas las funciones que componen la API del caché,
+ * los prototipos de todas las funciones que componen el mecanismo del caché,
  * Siguiendo la normativa de codificación y modularidad del proyecto.
  *
  * @authors - Diego Peralta
@@ -46,8 +46,8 @@ typedef struct LRUCache
 {
     int capacity;       // Capacidad maxima
     int current_size;   // Cuántos elementos hay ahora
-    Node* head;         // nodo mas reciente (MRU)
-    Node* tail;         // nodo menos reciente (LRU)
+    Node* head;         // Nodo mas reciente (MRU)
+    Node* tail;         // Nodo menos reciente (LRU)
 }
 LRUCache;
 

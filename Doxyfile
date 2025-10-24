@@ -1,5 +1,5 @@
-# Configuración optimizada de Doxygen para Cache LRU
-# Generado para el proyecto de Diego Peralta, Sebastian Ramirez, 
+# Doxygen para Cache LRU
+# Proyecto de Diego Peralta, Sebastian Ramirez, 
 # Rodolfo Aguilar y Benjamin Reyes
 
 #---------------------------------------------------------------------------
@@ -50,7 +50,7 @@ HTML_DYNAMIC_SECTIONS  = YES
 SEARCHENGINE           = YES
 
 #---------------------------------------------------------------------------
-# Configuración de Salida LaTeX (DESACTIVADO para rapidez)
+# Configuración de Salida LaTeX 
 #---------------------------------------------------------------------------
 
 GENERATE_LATEX         = NO
@@ -94,7 +94,7 @@ WARN_NO_PARAMDOC       = NO
 WARN_FORMAT            = "$file:$line: $text"
 
 #---------------------------------------------------------------------------
-# Configuración de Gráficos (requiere Graphviz instalado)
+# Configuración de Gráficos 
 #---------------------------------------------------------------------------
 
 HAVE_DOT               = YES
