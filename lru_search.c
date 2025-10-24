@@ -1,3 +1,19 @@
+/**
+ * @file lru_search.c
+ * @brief Implementación de la función para buscar un dato en la caché LRU sin alterar su prioridad.
+ *
+ * Esta función es fundamental para verificar la existencia de un dato (Cache Hit/Miss)
+ * en los comandos 'search' y 'get'. Retorna la posición del dato (1-basada) 
+ * o -1 si no se encuentra, manteniendo la naturaleza de solo lectura.
+ *
+ * * @authors 
+ *          - Diego Peralta
+ *          - Sebastian Ramirez
+ *          - Rodolfo Aguilar
+ *          - Benjamin Reyes
+ * @date 24 de Octubre de 2025
+ */
+
 #include "lru.h"
 
 /**
@@ -10,7 +26,7 @@
 int search_cache(LRUCache* cache, char data)
 {
     int position;
-    if (cache == NULL)
+    if (cache == NULL) //Valida si la cache ha sido creada
     {
         return -1;
     }

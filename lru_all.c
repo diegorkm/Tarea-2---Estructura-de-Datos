@@ -1,17 +1,34 @@
+/**
+ * @file lru_all.c
+ * @brief Implementación de la función para mostrar el contenido completo de la caché LRU.
+ *
+ * Esta función recorre la lista doblemente enlazada desde el head (MRU) hasta el tail (LRU)
+ * e imprime los datos de cada nodo, permitiendo al usuario visualizar el estado actual
+ * y el orden de prioridad del caché.
+ *
+ * * @authors 
+ *          - Diego Peralta
+ *          - Sebastian Ramirez
+ *          - Rodolfo Aguilar
+ *          - Benjamin Reyes
+ * @date 24 de Octubre de 2025
+ */
+
 #include "lru.h"
 
 /**
- * @brief Muestra todo el contenido de la cach� LRU desde MRU (head) hasta LRU (tail).
- * 
- * Recorre la lista doblemente enlazada e imprime los caracteres en el formato:
- *   Cache contents: C - B - A
- * donde C es el m�s reciente (head/MRU) y A el menos reciente (tail/LRU).
- * 
+ * @brief Muestra el contenido completo de la caché, desde MRU (head) a LRU (tail).
+ *
+ * Recorre la lista enlazada e imprime la información de cada nodo. Si el caché está
+ * vacío o no ha sido inicializado, imprime un mensaje de error o estado.
+ *
  * @param cache Puntero a la estructura LRUCache.
+ * @return void No retorna valor.
  */
+
 void display_cache(LRUCache* cache)
 {
-    if (cache == NULL) 
+    if (cache == NULL) //Verificación de errores
     {
         printf("No hay cache. Utiliza 'create <n>' primero.\n");
         return;

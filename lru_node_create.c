@@ -1,16 +1,18 @@
 /**
- * lru_create.c
- * Implementación de la función para crear una caché LRU.
- * 
- * Autores: 
- * Fecha: 24 de Octubre de 2025
- * 
- * Descripción:
- *      Esta función reserva memoria para una estructura LRUCache,
- *      valida que la capacidad sea al menos 5 e inicializa
- *      los punteros head y tail en NULL. 
+ * @file lru_node_create.c
+ * @brief Implementación de las funciones para la creación de la estructura LRUCache y de los nodos Node.
+ *
+ * Contiene la definición de dos funciones clave para la inicialización:
+ * 1. create_cache(): Asigna y configura la estructura principal del caché.
+ * 2. create_node(): Asigna y configura un nodo individual que será parte de la lista doblemente enlazada.
+ *
+  * * @authors 
+ *          - Diego Peralta
+ *          - Sebastian Ramirez
+ *          - Rodolfo Aguilar
+ *          - Benjamin Reyes
+ * @date 24 de Octubre de 2025
  */
-
 #include "lru.h"
 
 /**
@@ -43,10 +45,11 @@ LRUCache* create_cache(int capacity){
 
 /**
  * @brief Crea un nuevo nodo (Node) para almacenar un dato de tipo char.
+ * * Asigna memoria para un nuevo nodo e inicializa sus punteros 'prev' y 'next' a NULL.
+ * El dato proporcionado es almacenado en el campo 'data'.
  * * @param data El carácter (letra mayúscula) que se almacenará en el nodo.
  * @return Node* Puntero al nodo creado, o NULL si falla la asignación de memoria.
  */
-
 Node* create_node(char data) 
 {
     Node* new_node = (Node*)malloc(sizeof(Node));
