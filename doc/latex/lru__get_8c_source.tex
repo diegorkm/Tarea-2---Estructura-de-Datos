@@ -1,0 +1,30 @@
+\doxysection{lru\+\_\+get.\+c}
+\hypertarget{lru__get_8c_source}{}\label{lru__get_8c_source}\mbox{\hyperlink{lru__get_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lru_8h}{lru.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00032}\mbox{\hyperlink{lru_8h_aa8350dd503047035b6321cded626414f}{00032}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lru__get_8c_aa8350dd503047035b6321cded626414f}{get\_data}}(\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}}*\ cache,\ \textcolor{keywordtype}{char}\ data)\ }
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00033}00033\ \{\ \ \ \textcolor{comment}{//Comprobación\ de\ errores}}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ ==\ NULL\ ||\ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a1fa2c8082161e747a687eed93878b406}{capacity}}\ ==\ 0)\ }
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00035}00035\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00036}00036\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Error:\ El\ cache\ no\ ha\ sido\ inicializado.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00037}00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00038}00038\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//Revisa\ si\ existe\ el\ nodo\ en\ el\ cache}}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00040}00040\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ existente\ =\ \mbox{\hyperlink{lru_8h_ab160f254cba53936d8fc1ae1046e7134}{buscar\_nodo}}(cache,\ data);}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (existente\ !=\ NULL)\ \textcolor{comment}{//Si\ existe\ el\ nodo:}}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00042}00042\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00043}00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{lru_8h_a7caadd271365ace085a1d10dc00b147a}{remove\_node}}(cache,\ existente);\ \textcolor{comment}{//Lo\ quita\ de\ su\ posición\ actual}}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{lru_8h_a6c981b179587f9bceb5c38c469d41948}{add\_inicio}}(cache,\ existente);\ \textcolor{comment}{//Lo\ añade\ al\ inicio\ (MRU)}}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00045}00045\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nElemento\ \%c\ encontrado\ y\ movido\ a\ inicio.\(\backslash\)n"{}},\ data);}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00046}00046\ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00047}00047\ \ \ \ \ \textcolor{keywordflow}{else}\ }
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00048}00048\ \ \ \ \ \{\ \ \ \textcolor{comment}{//Si\ el\ nodo\ no\ existe:}}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00049}00049\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nElemento\ \%c\ no\ encontrado\ en\ el\ cache.\(\backslash\)n"{}},\ data);}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00050}00050\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru__get_8c_source_l00051}00051\ \}\ \ \ }
+
+\end{DoxyCode}

@@ -1,0 +1,28 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title="Punto de entrada principal del programa LRU." alt="" coords="5,208,55,235"/>
+<area shape="rect" id="Node000002" href="$lru__add_8c.html#a4b835ce419aab66d8d26d2c155416e5d" title="Implementa la lógica de añadir un dato al caché." alt="" coords="118,107,192,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="40,206,66,175,101,143,107,139,110,144,104,147,70,179,44,209"/>
+<area shape="rect" id="Node000007" href="$lru__node__create_8c.html#aa7ef86fad308723c0e747d432fcd394d" title="Crea e inicializa una nueva estructura LRUCache." alt="" coords="105,157,204,184"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="54,209,105,188,107,193,56,214"/>
+<area shape="rect" id="Node000008" href="$lru__all_8c.html#aae6f906d264c4d0147ca44675e82269a" title="Muestra el contenido completo de la caché desde MRU a LRU." alt="" coords="103,208,207,235"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="55,219,87,219,87,224,55,224"/>
+<area shape="rect" id="Node000009" href="$lru__free_8c.html#a953e550388e334ebc573f56c9974271b" title="Libera toda la memoria dinámica asociada al caché." alt="" coords="112,259,198,285"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="56,229,107,250,105,255,54,234"/>
+<area shape="rect" id="Node000010" href="$lru__get_8c.html#aa8350dd503047035b6321cded626414f" title="Implementa la lógica de &quot;usar&quot; un dato." alt="" coords="119,56,190,83"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="34,206,57,153,77,121,101,93,105,89,108,93,105,97,81,124,62,155,38,208"/>
+<area shape="rect" id="Node000011" href="$lru__menu_8c.html#a2a0e843767aeea4f433a28b9c54f573a" title="Muestra el menú de comandos disponibles para el usuario." alt="" coords="128,309,182,336"/>
+<area shape="poly" id="edge13_Node000001_Node000011" title=" " alt="" coords="44,233,70,264,104,295,116,303,113,307,101,299,66,267,40,237"/>
+<area shape="rect" id="Node000012" href="$lru__search_8c.html#abff5b8516d0df8c262f3551a125de27e" title="Busca un dato en la caché e indica su posición." alt="" coords="104,360,206,387"/>
+<area shape="poly" id="edge14_Node000001_Node000012" title=" " alt="" coords="38,234,62,287,81,318,105,346,108,349,105,353,101,350,77,322,57,290,34,236"/>
+<area shape="rect" id="Node000003" href="$lru__add__inicio_8c.html#a6c981b179587f9bceb5c38c469d41948" title="Añade un nodo al inicio de la lista doblemente enlazada (posición MRU)." alt="" coords="265,5,344,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="187,104,205,93,229,68,253,42,259,38,262,42,257,46,233,71,209,97,190,108"/>
+<area shape="rect" id="Node000004" href="$lru__add__buscar__nodo_8c.html#ab160f254cba53936d8fc1ae1046e7134" title="Busca un nodo específico en la caché por su dato." alt="" coords="257,56,352,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="192,105,247,86,249,91,193,110"/>
+<area shape="rect" id="Node000005" href="$lru__node__create_8c.html#aa183954c4a6cf9980694182e315b633e" title="Crea un nuevo nodo (Node) con el dato especificado." alt="" coords="258,157,351,184"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="193,130,249,149,247,154,192,135"/>
+<area shape="rect" id="Node000006" href="$lru__add__remove__node_8c.html#a7caadd271365ace085a1d10dc00b147a" title="Elimina un nodo de su posición actual en la lista doblemente enlazada." alt="" coords="255,107,354,133"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="193,117,239,117,239,123,193,123"/>
+<area shape="poly" id="edge10_Node000010_Node000003" title=" " alt="" coords="190,55,249,34,251,40,192,60"/>
+<area shape="poly" id="edge11_Node000010_Node000004" title=" " alt="" coords="191,67,242,67,242,72,191,72"/>
+<area shape="poly" id="edge12_Node000010_Node000006" title=" " alt="" coords="192,79,250,99,248,104,190,84"/>
+</map>

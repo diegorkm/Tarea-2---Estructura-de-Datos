@@ -3,8 +3,8 @@
  * @brief Archivo de cabecera principal para el sistema de Caché LRU.
  *
  * Contiene las definiciones de las estructuras de datos (Node y LRUCache) y
- * los prototipos de todas las funciones que componen la API del caché,
- * [cite_start]siguiendo la normativa de codificación y modularidad del proyecto. [cite: 25, 31]
+ * los prototipos de todas las funciones que componen el mecanismo del caché,
+ * Siguiendo la normativa de codificación y modularidad del proyecto.
  *
  * @authors - Diego Peralta
  *          - Sebastian Ramirez
@@ -46,15 +46,15 @@ typedef struct LRUCache
 {
     int capacity;       // Capacidad maxima
     int current_size;   // Cuántos elementos hay ahora
-    Node* head;         // nodo mas reciente (MRU)
-    Node* tail;         // nodo menos reciente (LRU)
+    Node* head;         // Nodo mas reciente (MRU)
+    Node* tail;         // Nodo menos reciente (LRU)
 }
 LRUCache;
 
 /**
  * @brief Crea e inicializa una nueva estructura LRUCache.
  *
- * [cite_start]@param capacity La capacidad máxima deseada para el caché (debe ser >= 5). [cite: 16]
+ * @param capacity La capacidad máxima deseada para el caché (debe ser >= 5).
  * @return LRUCache* Puntero a la caché recién creada, o NULL si la capacidad es inválida o la asignación de memoria falla.
  */
 LRUCache* create_cache(int capacity);
@@ -106,7 +106,7 @@ void menu();
  * @brief Implementa la lógica de añadir un dato al caché.
  *
  * Si el dato existe, se promueve a MRU. Si no existe, se añade a MRU,
- * [cite_start]y se elimina el LRU si la caché está llena. [cite: 18, 19]
+ * y se elimina el LRU si la caché está llena.
  *
  * @param cache Puntero a la estructura LRUCache.
  * @param data El dato (letra) a añadir.
@@ -117,7 +117,7 @@ void add_data(LRUCache* cache, char data);
  * @brief Implementa la lógica de "usar" un dato.
  *
  * Si el dato existe (cache hit), se promueve a la posición MRU (head).
- * [cite_start]Si no existe (cache miss), no se realiza ninguna acción. [cite: 17, 53]
+ * Si no existe (cache miss), no se realiza ninguna acción.
  *
  * @param cache Puntero a la estructura LRUCache.
  * @param data El dato (letra) a usar.
@@ -127,11 +127,11 @@ void get_data(LRUCache* cache, char data);
 /**
  * @brief Busca un dato en la caché e indica su posición.
  *
- * [cite_start]Esta función no altera la prioridad del dato. [cite: 20]
+ * Esta función no altera la prioridad del dato.
  *
  * @param cache Puntero a la estructura LRUCache.
  * @param data El dato (letra) a buscar.
- * [cite_start]@return int La posición del dato (1-basada) en la lista, o -1 si no se encuentra. [cite: 50]
+ * @return int La posición del dato (1-basada) en la lista, o -1 si no se encuentra.
  */
 int search_cache(LRUCache* cache, char data);
 
@@ -145,7 +145,7 @@ void display_cache(LRUCache* cache);
 /**
  * @brief Libera toda la memoria dinámica asociada al caché.
  *
- * [cite_start]Libera los nodos de la lista y la estructura LRUCache en sí misma. [cite: 36]
+ * Libera los nodos de la lista y la estructura LRUCache en sí misma. 
  *
  * @param cache Puntero a la estructura LRUCache a liberar.
  */

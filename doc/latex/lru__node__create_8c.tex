@@ -1,0 +1,141 @@
+\doxysection{lru\+\_\+node\+\_\+create.\+c File Reference}
+\hypertarget{lru__node__create_8c}{}\label{lru__node__create_8c}\index{lru\_node\_create.c@{lru\_node\_create.c}}
+
+
+Implementación de las funciones para la creación de la estructura \doxylink{struct_l_r_u_cache}{LRUCache} y de los nodos \doxylink{struct_node}{Node}.  
+
+
+{\ttfamily \#include "{}lru.\+h"{}}\newline
+Include dependency graph for lru\+\_\+node\+\_\+create.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lru__node__create_8c_aa7ef86fad308723c0e747d432fcd394d}{create\+\_\+cache}} (int capacity)
+\begin{DoxyCompactList}\small\item\em Crea e inicializa una caché LRU con la capacidad dada. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lru__node__create_8c_aa183954c4a6cf9980694182e315b633e}{create\+\_\+node}} (char data)
+\begin{DoxyCompactList}\small\item\em Crea un nuevo nodo (\doxylink{struct_node}{Node}) para almacenar un dato de tipo char. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementación de las funciones para la creación de la estructura \doxylink{struct_l_r_u_cache}{LRUCache} y de los nodos \doxylink{struct_node}{Node}. 
+
+Contiene la definición de dos funciones clave para la inicialización\+:
+\begin{DoxyEnumerate}
+\item \doxylink{lru__node__create_8c_aa7ef86fad308723c0e747d432fcd394d}{create\+\_\+cache()}\+: Asigna y configura la estructura principal del caché.
+\item \doxylink{lru__node__create_8c_aa183954c4a6cf9980694182e315b633e}{create\+\_\+node()}\+: Asigna y configura un nodo individual que será parte de la lista doblemente enlazada.
+\begin{DoxyItemize}
+\item \begin{DoxyAuthor}{Authors}
+
+\begin{DoxyItemize}
+\item Diego Peralta
+\item Sebastian Ramirez
+\item Rodolfo Aguilar
+\item Benjamin Reyes 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24 de Octubre de 2025 
+\end{DoxyDate}
+
+\end{DoxyItemize}
+\end{DoxyEnumerate}
+
+Definition in file \mbox{\hyperlink{lru__node__create_8c_source}{lru\+\_\+node\+\_\+create.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{lru__node__create_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{lru__node__create_8c_aa7ef86fad308723c0e747d432fcd394d}\index{lru\_node\_create.c@{lru\_node\_create.c}!create\_cache@{create\_cache}}
+\index{create\_cache@{create\_cache}!lru\_node\_create.c@{lru\_node\_create.c}}
+\doxysubsubsection{\texorpdfstring{create\_cache()}{create\_cache()}}
+{\footnotesize\ttfamily \label{lru__node__create_8c_aa7ef86fad308723c0e747d432fcd394d} 
+\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*} create\+\_\+cache (\begin{DoxyParamCaption}\item[{int}]{capacity}{}\end{DoxyParamCaption})}
+
+
+
+Crea e inicializa una caché LRU con la capacidad dada. 
+
+Crea e inicializa una nueva estructura \doxylink{struct_l_r_u_cache}{LRUCache}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em capacity} & Capacidad máxima del caché. Debe ser \texorpdfstring{$>$}{>}= 5. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+LRUCache\texorpdfstring{$\ast$}{*} Puntero a la caché creada, o NULL si falla (capacidad inválida o error de memoria). 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lru__node__create_8c_source_l00026}{26}} of file \mbox{\hyperlink{lru__node__create_8c_source}{lru\+\_\+node\+\_\+create.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordflow}{if}\ (capacity\ <\ 5)\{}
+\DoxyCodeLine{00028\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}El\ tamanyo\ minimo\ del\ cache\ es\ 5.\(\backslash\)n"{}});}
+\DoxyCodeLine{00029\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00030\ \ \ \ \ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}}*\ cache\ =\ (\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}}*)\ malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}}));}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ ==\ NULL)\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Error\ al\ asignar\ memoria\ para\ el\ cache.\(\backslash\)n"{}});}
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00036\ \ \ \ \ \}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a1fa2c8082161e747a687eed93878b406}{capacity}}\ =\ capacity;}
+\DoxyCodeLine{00039\ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a0bac014dc8e5262734b325d8a81b2ef2}{current\_size}}\ =\ 0;}
+\DoxyCodeLine{00040\ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}}\ =\ NULL;}
+\DoxyCodeLine{00041\ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_aa33cac6a0b065de0e3bf816e63c953f7}{tail}}\ =\ NULL;}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordflow}{return}\ cache;}
+\DoxyCodeLine{00044\ \}}
+
+\end{DoxyCode}
+\Hypertarget{lru__node__create_8c_aa183954c4a6cf9980694182e315b633e}\index{lru\_node\_create.c@{lru\_node\_create.c}!create\_node@{create\_node}}
+\index{create\_node@{create\_node}!lru\_node\_create.c@{lru\_node\_create.c}}
+\doxysubsubsection{\texorpdfstring{create\_node()}{create\_node()}}
+{\footnotesize\ttfamily \label{lru__node__create_8c_aa183954c4a6cf9980694182e315b633e} 
+\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} create\+\_\+node (\begin{DoxyParamCaption}\item[{char}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Crea un nuevo nodo (\doxylink{struct_node}{Node}) para almacenar un dato de tipo char. 
+
+Crea un nuevo nodo (\doxylink{struct_node}{Node}) con el dato especificado.
+
+
+\begin{DoxyItemize}
+\item Asigna memoria para un nuevo nodo e inicializa sus punteros \textquotesingle{}prev\textquotesingle{} y \textquotesingle{}next\textquotesingle{} a NULL. El dato proporcionado es almacenado en el campo \textquotesingle{}data\textquotesingle{}.
+\item 
+\begin{DoxyParams}{Parameters}
+{\em data} & El carácter (letra mayúscula) que se almacenará en el nodo. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node\texorpdfstring{$\ast$}{*} Puntero al nodo creado, o NULL si falla la asignación de memoria. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{lru__node__create_8c_source_l00053}{53}} of file \mbox{\hyperlink{lru__node__create_8c_source}{lru\+\_\+node\+\_\+create.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054\ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ new\_node\ =\ (\mbox{\hyperlink{struct_node}{Node}}*)malloc(\textcolor{keyword}{sizeof}(\mbox{\hyperlink{struct_node}{Node}}));}
+\DoxyCodeLine{00056\ \ \ \ \ \textcolor{keywordflow}{if}\ (new\_node\ ==\ NULL)\ }
+\DoxyCodeLine{00057\ \ \ \ \ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Error\ al\ asignar\ memoria\ para\ el\ nodo.\(\backslash\)n"{}});}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00060\ \ \ \ \ \}}
+\DoxyCodeLine{00061\ \ \ \ \ new\_node-\/>\mbox{\hyperlink{struct_node_a94c9686e27f05bedd604d347d5bad449}{data}}\ =\ data;}
+\DoxyCodeLine{00062\ \ \ \ \ new\_node-\/>\mbox{\hyperlink{struct_node_aea9fefc3628c3ce98b967e8addf06e88}{prev}}\ =\ NULL;}
+\DoxyCodeLine{00063\ \ \ \ \ new\_node-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}}\ =\ NULL;}
+\DoxyCodeLine{00064\ \ \ \ \ \textcolor{keywordflow}{return}\ new\_node;}
+\DoxyCodeLine{00065\ \}}
+
+\end{DoxyCode}

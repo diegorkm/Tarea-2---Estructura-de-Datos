@@ -1,0 +1,237 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Caché LRU: Referencia del archivo lru_search.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Caché LRU<span id="projectnumber">&#160;v1.0</span>
+   </div>
+   <div id="projectbrief">Implementación de un sistema de Caché LRU (Least Recently Used) en C con lista doblemente enlazada</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lru__search_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lru_search.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementación de la función para buscar un dato en la caché LRU sin alterar su prioridad.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="lru_8h_source.html">lru.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de dependencias incluidas en lru_search.c:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lru__search_8c__incl.png" border="0" usemap="#alru__search_8c" loading="lazy" alt=""/></div>
+<map name="alru__search_8c" id="alru__search_8c">
+<area shape="rect" title="Implementación de la función para buscar un dato en la caché LRU sin alterar su prioridad." alt="" coords="75,5,167,32"/>
+<area shape="rect" href="lru_8h.html" title="Archivo de cabecera principal para el sistema de Caché LRU." alt="" coords="98,80,144,107"/>
+<area shape="poly" title=" " alt="" coords="124,33,124,64,118,64,118,33"/>
+<area shape="rect" title=" " alt="" coords="5,155,66,181"/>
+<area shape="poly" title=" " alt="" coords="108,109,63,147,60,143,104,105"/>
+<area shape="rect" title=" " alt="" coords="89,155,152,181"/>
+<area shape="poly" title=" " alt="" coords="124,107,124,139,118,139,118,107"/>
+<area shape="rect" title=" " alt="" coords="177,155,241,181"/>
+<area shape="poly" title=" " alt="" coords="138,105,184,143,180,147,134,109"/>
+</map>
+</div>
+</div>
+<p><a href="lru__search_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:abff5b8516d0df8c262f3551a125de27e" id="r_abff5b8516d0df8c262f3551a125de27e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abff5b8516d0df8c262f3551a125de27e">search_cache</a> (<a class="el" href="struct_l_r_u_cache.html">LRUCache</a> *cache, char data)</td></tr>
+<tr class="memdesc:abff5b8516d0df8c262f3551a125de27e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Busca un dato en la caché LRU y devuelve su posición (1-basada).  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Implementación de la función para buscar un dato en la caché LRU sin alterar su prioridad. </p>
+<p>Esta función es fundamental para verificar la existencia de un dato (Cache Hit/Miss) en los comandos 'search' y 'get'. Retorna la posición del dato (1-basada) o -1 si no se encuentra, manteniendo la naturaleza de solo lectura.</p>
+<ul>
+<li><dl class="section author"><dt>Autores</dt><dd><ul>
+<li>Diego Peralta</li>
+<li>Sebastian Ramirez</li>
+<li>Rodolfo Aguilar</li>
+<li>Benjamin Reyes </li>
+</ul>
+</dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>24 de Octubre de 2025 </dd></dl>
+</li>
+</ul>
+
+<p class="definition">Definición en el archivo <a class="el" href="lru__search_8c_source.html">lru_search.c</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="abff5b8516d0df8c262f3551a125de27e" name="abff5b8516d0df8c262f3551a125de27e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abff5b8516d0df8c262f3551a125de27e">&#9670;&#160;</a></span>search_cache()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int search_cache </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_l_r_u_cache.html">LRUCache</a> *</td>          <td class="paramname"><span class="paramname"><em>cache</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Busca un dato en la caché LRU y devuelve su posición (1-basada). </p>
+<p>Busca un dato en la caché e indica su posición.</p>
+<ul>
+<li><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cache</td><td>Puntero a la estructura <a class="el" href="struct_l_r_u_cache.html" title="Estructura principal que define la caché LRU.">LRUCache</a>.} </td></tr>
+    <tr><td class="paramname">data</td><td>El carácter (letra) a buscar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>int La posición del dato (1-basada) si se encuentra, o -1 si no está. </dd></dl>
+</li>
+</ul>
+
+<p class="definition">Definición en la línea <a class="el" href="lru__search_8c_source.html#l00026">26</a> del archivo <a class="el" href="lru__search_8c_source.html">lru_search.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordtype">int</span> position;</div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (cache == NULL) <span class="comment">//Valida si la cache ha sido creada</span></div>
+<div class="line"><span class="lineno">   30</span>    {</div>
+<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">   32</span>    }</div>
+<div class="line"><span class="lineno">   33</span> </div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_struct" href="struct_node.html">Node</a>* current = cache-&gt;<a class="code hl_variable" href="struct_l_r_u_cache.html#a52a4ef73dc27ade730aa121870d40a50">head</a>;</div>
+<div class="line"><span class="lineno">   35</span>    position = 1; <span class="comment">// La posición se cuenta desde 1 (el head es la posición 1).</span></div>
+<div class="line"><span class="lineno">   36</span> </div>
+<div class="line"><span class="lineno">   37</span>    <span class="keywordflow">while</span> (current != NULL) <span class="comment">// Recorre la lista enlazada desde el MRU (head) hasta el LRU (tail).</span></div>
+<div class="line"><span class="lineno">   38</span>    {</div>
+<div class="line"><span class="lineno">   39</span>        <span class="keywordflow">if</span> (current-&gt;<a class="code hl_variable" href="struct_node.html#a94c9686e27f05bedd604d347d5bad449">data</a> == data)</div>
+<div class="line"><span class="lineno">   40</span>        {</div>
+<div class="line"><span class="lineno">   41</span>            <span class="keywordflow">return</span> position;  <span class="comment">//Dato encontrado, devuelve la posición.</span></div>
+<div class="line"><span class="lineno">   42</span>        }</div>
+<div class="line"><span class="lineno">   43</span>        current = current-&gt;<a class="code hl_variable" href="struct_node.html#af67b110ca1a258b793bf69d306929b22">next</a>;</div>
+<div class="line"><span class="lineno">   44</span>        position++;</div>
+<div class="line"><span class="lineno">   45</span>    }</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">return</span> -1; <span class="comment">// Si no encuentra el dato, devuelve -1.</span></div>
+<div class="line"><span class="lineno">   48</span>}</div>
+<div class="ttc" id="astruct_l_r_u_cache_html_a52a4ef73dc27ade730aa121870d40a50"><div class="ttname"><a href="struct_l_r_u_cache.html#a52a4ef73dc27ade730aa121870d40a50">LRUCache::head</a></div><div class="ttdeci">Node * head</div><div class="ttdef"><b>Definition</b> <a href="lru_8h_source.html#l00049">lru.h:49</a></div></div>
+<div class="ttc" id="astruct_node_html"><div class="ttname"><a href="struct_node.html">Node</a></div><div class="ttdoc">Representa un nodo en la lista doblemente enlazada de la caché.</div><div class="ttdef"><b>Definition</b> <a href="lru_8h_source.html#l00030">lru.h:31</a></div></div>
+<div class="ttc" id="astruct_node_html_a94c9686e27f05bedd604d347d5bad449"><div class="ttname"><a href="struct_node.html#a94c9686e27f05bedd604d347d5bad449">Node::data</a></div><div class="ttdeci">char data</div><div class="ttdef"><b>Definition</b> <a href="lru_8h_source.html#l00032">lru.h:32</a></div></div>
+<div class="ttc" id="astruct_node_html_af67b110ca1a258b793bf69d306929b22"><div class="ttname"><a href="struct_node.html#af67b110ca1a258b793bf69d306929b22">Node::next</a></div><div class="ttdeci">struct Node * next</div><div class="ttdef"><b>Definition</b> <a href="lru_8h_source.html#l00034">lru.h:34</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lru_8h_source.html#l00032">Node::data</a>, <a class="el" href="lru_8h_source.html#l00049">LRUCache::head</a> y <a class="el" href="lru_8h_source.html#l00034">Node::next</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lru_8c_source.html#l00026">main()</a>.</p>
+<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lru__search_8c_abff5b8516d0df8c262f3551a125de27e_icgraph.png" border="0" usemap="#alru__search_8c_abff5b8516d0df8c262f3551a125de27e_icgraph" loading="lazy" alt=""/></div>
+<map name="alru__search_8c_abff5b8516d0df8c262f3551a125de27e_icgraph" id="alru__search_8c_abff5b8516d0df8c262f3551a125de27e_icgraph">
+<area shape="rect" title="Busca un dato en la caché LRU y devuelve su posición (1&#45;basada)." alt="" coords="103,5,205,32"/>
+<area shape="rect" href="lru_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Punto de entrada principal del programa LRU." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="lru__search_8c.html">lru_search.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

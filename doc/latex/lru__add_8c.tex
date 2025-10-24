@@ -1,0 +1,119 @@
+\doxysection{lru\+\_\+add.\+c File Reference}
+\hypertarget{lru__add_8c}{}\label{lru__add_8c}\index{lru\_add.c@{lru\_add.c}}
+
+
+Implementación de la función principal para añadir (o usar) un dato en la caché LRU.  
+
+
+{\ttfamily \#include "{}lru.\+h"{}}\newline
+Include dependency graph for lru\+\_\+add.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lru__add_8c_a4b835ce419aab66d8d26d2c155416e5d}{add\+\_\+data}} (\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*}cache, char data)
+\begin{DoxyCompactList}\small\item\em Añade un dato a la caché LRU, siguiendo la política de reemplazo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementación de la función principal para añadir (o usar) un dato en la caché LRU. 
+
+Esta función aplica la lógica central del algoritmo LRU\+: maneja los "{}\+Cache Hits"{} (promoviendo el nodo al MRU) y los "{}\+Cache Misses"{} (añadiendo el nuevo nodo al MRU y eliminando el nodo LRU si la caché está llena).
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyAuthor}{Authors}
+
+\begin{DoxyItemize}
+\item Diego Peralta
+\item Sebastian Ramirez
+\item Rodolfo Aguilar
+\item Benjamin Reyes 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24 de Octubre de 2025 
+\end{DoxyDate}
+
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{lru__add_8c_source}{lru\+\_\+add.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{lru__add_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{lru__add_8c_a4b835ce419aab66d8d26d2c155416e5d}\index{lru\_add.c@{lru\_add.c}!add\_data@{add\_data}}
+\index{add\_data@{add\_data}!lru\_add.c@{lru\_add.c}}
+\doxysubsubsection{\texorpdfstring{add\_data()}{add\_data()}}
+{\footnotesize\ttfamily \label{lru__add_8c_a4b835ce419aab66d8d26d2c155416e5d} 
+void add\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*}}]{cache}{, }\item[{char}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Añade un dato a la caché LRU, siguiendo la política de reemplazo. 
+
+Implementa la lógica de añadir un dato al caché.
+
+Los casos manejados son\+:
+\begin{DoxyEnumerate}
+\item {\bfseries{Cache Hit\+:}} Si el dato existe, se remueve de su posición y se inserta al inicio (MRU).
+\item {\bfseries{Cache Miss (Lleno)\+:}} Si el dato no existe y la caché está llena, se elimina el nodo LRU (tail), y luego se añade el nuevo nodo al inicio (MRU).
+\item {\bfseries{Cache Miss (Hay espacio)\+:}} Si el dato no existe y hay espacio, se añade directamente al inicio (MRU).
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em cache} & Puntero a la estructura \doxylink{struct_l_r_u_cache}{LRUCache}. \\
+\hline
+{\em data} & El carácter (letra) a añadir o usar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void No retorna valor. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lru__add_8c_source_l00032}{32}} of file \mbox{\hyperlink{lru__add_8c_source}{lru\+\_\+add.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \{\ \ \ \textcolor{comment}{//Verificación\ inicial\ del\ cache}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ ==\ NULL\ ||\ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a1fa2c8082161e747a687eed93878b406}{capacity}}\ ==\ 0)\ }
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Error:\ El\ cache\ no\ ha\ sido\ inicializado.\(\backslash\)n"{}});}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//Revisa\ si\ existe\ el\ nodo\ en\ el\ cache}}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ existente\ =\ \mbox{\hyperlink{lru_8h_ab160f254cba53936d8fc1ae1046e7134}{buscar\_nodo}}(cache,\ data);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (existente\ !=\ NULL)\ \textcolor{comment}{//Ya\ existe\ el\ elemento}}
+\DoxyCodeLine{00042\ \ \ \ \ \{\ \ \ \textcolor{comment}{//Se\ quita\ de\ su\ posición\ y\ se\ mueve\ al\ inicio}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{lru_8h_a7caadd271365ace085a1d10dc00b147a}{remove\_node}}(cache,\ existente);}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{lru_8h_a6c981b179587f9bceb5c38c469d41948}{add\_inicio}}(cache,\ existente);}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nElemento\ \%c\ ya\ existe,\ movido\ a\ inicio.\(\backslash\)n"{}},\ data);}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00047\ \ \ \ \ \}\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//Si\ el\ cache\ esta\ lleno,\ requiere\ reemplazo}}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a0bac014dc8e5262734b325d8a81b2ef2}{current\_size}}\ >=\ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a1fa2c8082161e747a687eed93878b406}{capacity}})\ }
+\DoxyCodeLine{00050\ \ \ \ \ \{\ \ \ \textcolor{comment}{//Se\ identifica\ el\ LRU,\ que\ es\ el\ tail}}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ lru\ =\ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_aa33cac6a0b065de0e3bf816e63c953f7}{tail}};}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{char}\ dato\_eliminado\ =\ lru-\/>\mbox{\hyperlink{struct_node_a94c9686e27f05bedd604d347d5bad449}{data}};}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \textcolor{comment}{//Se\ desvincula\ el\ nodo\ LRU\ y\ se\ libera\ su\ memoria.}}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{lru_8h_a7caadd271365ace085a1d10dc00b147a}{remove\_node}}(cache,\ lru);}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ free(lru);}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nElemento\ \%c\ eliminado\ (cache\ lleno)\(\backslash\)n"{}},\ dato\_eliminado);}
+\DoxyCodeLine{00057\ \ \ \ \ \}}
+\DoxyCodeLine{00058\ \ \ \ \ \textcolor{comment}{//Crea\ un\ nuevo\ nodo\ (aplica\ si\ habia\ espacio\ o\ si\ se\ acaba\ de\ liberar\ espacio)}}
+\DoxyCodeLine{00059\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ nuevo\_nodo\ =\ \mbox{\hyperlink{lru_8h_aa183954c4a6cf9980694182e315b633e}{create\_node}}(data);}
+\DoxyCodeLine{00060\ \ \ \ \ \textcolor{keywordflow}{if}(nuevo\_nodo\ ==\ NULL)\ }
+\DoxyCodeLine{00061\ \ \ \ \ \{}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Error\ al\ crear\ el\ nodo\(\backslash\)n"{}});}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00064\ \ \ \ \ \}}
+\DoxyCodeLine{00065\ \ \ \ \ \textcolor{comment}{//El\ nuevo\ nodo\ se\ añade\ al\ inicio\ (MRU)}}
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{lru_8h_a6c981b179587f9bceb5c38c469d41948}{add\_inicio}}(cache,\ nuevo\_nodo);}
+\DoxyCodeLine{00067\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nElemento\ \%c\ anyadido\ al\ cache.\(\backslash\)n"{}},\ data);}
+\DoxyCodeLine{00068\ \}}
+
+\end{DoxyCode}

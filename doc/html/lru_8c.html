@@ -1,0 +1,373 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Caché LRU: Referencia del archivo lru.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Caché LRU<span id="projectnumber">&#160;v1.0</span>
+   </div>
+   <div id="projectbrief">Implementación de un sistema de Caché LRU (Least Recently Used) en C con lista doblemente enlazada</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lru_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lru.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementación del bucle principal (main) para el sistema de caché LRU.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdlib.h&gt;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="lru_8h_source.html">lru.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de dependencias incluidas en lru.c:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lru_8c__incl.png" border="0" usemap="#alru_8c" loading="lazy" alt=""/></div>
+<map name="alru_8c" id="alru_8c">
+<area shape="rect" title="Implementación del bucle principal (main) para el sistema de caché LRU." alt="" coords="103,5,149,32"/>
+<area shape="rect" title=" " alt="" coords="5,155,66,181"/>
+<area shape="poly" title=" " alt="" coords="110,34,86,55,64,81,51,111,43,140,38,139,46,109,60,79,83,51,107,30"/>
+<area shape="rect" title=" " alt="" coords="89,155,152,181"/>
+<area shape="poly" title=" " alt="" coords="131,32,134,66,134,107,129,140,124,139,129,106,129,66,125,33"/>
+<area shape="rect" title=" " alt="" coords="177,155,241,181"/>
+<area shape="poly" title=" " alt="" coords="136,31,197,140,192,142,131,34"/>
+<area shape="rect" href="lru_8h.html" title="Archivo de cabecera principal para el sistema de Caché LRU." alt="" coords="74,80,120,107"/>
+<area shape="poly" title=" " alt="" coords="124,34,110,67,105,65,119,32"/>
+<area shape="poly" title=" " alt="" coords="88,109,58,145,54,141,84,105"/>
+<area shape="poly" title=" " alt="" coords="104,106,114,139,109,141,98,108"/>
+<area shape="poly" title=" " alt="" coords="118,105,178,144,175,148,115,109"/>
+</map>
+</div>
+</div>
+<p><a href="lru_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97" id="r_a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
+<tr class="memdesc:a0ddf1224851353fc92bfbff6f499fa97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Punto de entrada principal del programa LRU.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Implementación del bucle principal (main) para el sistema de caché LRU. </p>
+<ul>
+<li>Este archivo contiene la función main que gestiona la interfaz de usuario por línea de comandos, permitiendo la creación, adición, búsqueda, uso, visualización y liberación del caché LRU. <dl class="section author"><dt>Autores</dt><dd>- Diego Peralta<ul>
+<li>Sebastian Ramirez</li>
+<li>Rodolfo Aguilar</li>
+<li>Benjamin Reyes </li>
+</ul>
+</dd></dl>
+</li>
+</ul>
+
+<p class="definition">Definición en el archivo <a class="el" href="lru_8c_source.html">lru.c</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a0ddf1224851353fc92bfbff6f499fa97" name="a0ddf1224851353fc92bfbff6f499fa97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ddf1224851353fc92bfbff6f499fa97">&#9670;&#160;</a></span>main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int main </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>argc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *</td>          <td class="paramname"><span class="paramname"><em>argv</em></span>[]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Punto de entrada principal del programa LRU. </p>
+<ul>
+<li>Inicializa la caché y gestiona el bucle de comandos interactivo del usuario.</li>
+<li><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>Número de argumentos pasados por línea de comandos (no utilizado). </td></tr>
+    <tr><td class="paramname">argv</td><td>Array de strings de argumentos (no utilizado). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>int Retorna 0 si el programa finaliza exitosamente. </dd></dl>
+</li>
+</ul>
+<p>Comando "create" Inicializa el caché si aún no ha sido creado. Requiere un entero para la capacidad máxima.</p>
+<p>Comando "add" Agrega un nuevo elemento al caché o promueve uno existente a MRU. Requiere un carácter (letra) a añadir.</p>
+<p>Comando "search" Busca un elemento en el caché e imprime su posición (1-basada) o -1. No altera la prioridad del dato.</p>
+<p>Comando "all" Muestra el contenido actual del caché, desde MRU (head) a LRU (tail). No altera la prioridad de los datos.</p>
+<p>Comando "get" Utiliza un elemento existente, promoviéndolo a MRU (posición 1). Si no existe, no hace nada.</p>
+<p>Comando "exit" Libera la memoria de la caché y sale del bucle principal.</p>
+
+<p class="definition">Definición en la línea <a class="el" href="lru_8c_source.html#l00026">26</a> del archivo <a class="el" href="lru_8c_source.html">lru.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>{</div>
+<div class="line"><span class="lineno">   28</span>    <span class="comment">//Variables de control y manejo de comandos.</span></div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordtype">int</span> n, ejecutando=1, posicion;</div>
+<div class="line"><span class="lineno">   30</span>    <span class="keywordtype">char</span> letra, comando[7], buscar_letra;</div>
+<div class="line"><span class="lineno">   31</span>    <span class="comment">//Puntero a la estructura de la cache, inicializando en NULL.</span></div>
+<div class="line"><span class="lineno">   32</span>    <a class="code hl_struct" href="struct_l_r_u_cache.html">LRUCache</a>* cache = NULL;</div>
+<div class="line"><span class="lineno">   33</span>    </div>
+<div class="line"><span class="lineno">   34</span>    <a class="code hl_function" href="lru_8h.html#a2a0e843767aeea4f433a28b9c54f573a">menu</a>(); <span class="comment">//Muestra el menú de comandos.</span></div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    <span class="keywordflow">while</span> (ejecutando) <span class="comment">//Bucle principal de ejecución</span></div>
+<div class="line"><span class="lineno">   37</span>    {</div>
+<div class="line"><span class="lineno">   38</span>        printf(<span class="stringliteral">&quot;lru&gt; &quot;</span>);</div>
+<div class="line"><span class="lineno">   39</span>        scanf(<span class="stringliteral">&quot;%s&quot;</span>, comando); <span class="comment">//Lee el comando ingresado por el usuario.</span></div>
+<div class="line"><span class="lineno">   40</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">   41</span><span class="comment">        /**</span></div>
+<div class="line"><span class="lineno">   42</span><span class="comment">         * @brief Comando &quot;create&quot;</span></div>
+<div class="line"><span class="lineno">   43</span><span class="comment">         * Inicializa el caché si aún no ha sido creado. </span></div>
+<div class="line"><span class="lineno">   44</span><span class="comment">         * Requiere un entero para la capacidad máxima.</span></div>
+<div class="line"><span class="lineno">   45</span><span class="comment">         */</span></div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">if</span> (strcmp(comando, <span class="stringliteral">&quot;create&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno">   48</span>        {</div>
+<div class="line"><span class="lineno">   49</span>            <span class="keywordflow">if</span> (cache == NULL)</div>
+<div class="line"><span class="lineno">   50</span>            {</div>
+<div class="line"><span class="lineno">   51</span>                scanf(<span class="stringliteral">&quot;%d&quot;</span>, &amp;n);</div>
+<div class="line"><span class="lineno">   52</span>                cache = <a class="code hl_function" href="lru_8h.html#aa7ef86fad308723c0e747d432fcd394d">create_cache</a>(n);    <span class="comment">// Si create_cache devuelve NULL, ya ha impreso el error interno (capacidad &lt; 5 o malloc fallido).</span></div>
+<div class="line"><span class="lineno">   53</span>                <span class="keywordflow">if</span> (cache != NULL)</div>
+<div class="line"><span class="lineno">   54</span>                {</div>
+<div class="line"><span class="lineno">   55</span>                    printf(<span class="stringliteral">&quot;\nCache creado con tamanyo: %d\n&quot;</span>, cache-&gt;<a class="code hl_variable" href="struct_l_r_u_cache.html#a1fa2c8082161e747a687eed93878b406">capacity</a>);</div>
+<div class="line"><span class="lineno">   56</span>                } </div>
+<div class="line"><span class="lineno">   57</span>            </div>
+<div class="line"><span class="lineno">   58</span>            }</div>
+<div class="line"><span class="lineno">   59</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   60</span>            {</div>
+<div class="line"><span class="lineno">   61</span>                printf(<span class="stringliteral">&quot;\nEl cache ya ha sido creado\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   62</span>            }</div>
+<div class="line"><span class="lineno">   63</span>        }</div>
+<div class="line"><span class="lineno">   64</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">   65</span><span class="comment">        /**</span></div>
+<div class="line"><span class="lineno">   66</span><span class="comment">         * @brief Comando &quot;add&quot;</span></div>
+<div class="line"><span class="lineno">   67</span><span class="comment">         * Agrega un nuevo elemento al caché o promueve uno existente a MRU.</span></div>
+<div class="line"><span class="lineno">   68</span><span class="comment">         * Requiere un carácter (letra) a añadir.</span></div>
+<div class="line"><span class="lineno">   69</span><span class="comment">         */</span></div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>        <span class="keywordflow">if</span> (strcmp(comando, <span class="stringliteral">&quot;add&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno">   72</span>        {</div>
+<div class="line"><span class="lineno">   73</span>            <span class="keywordflow">if</span> (cache == NULL)</div>
+<div class="line"><span class="lineno">   74</span>            {</div>
+<div class="line"><span class="lineno">   75</span>                printf(<span class="stringliteral">&quot;\nError: El cache no ha sido creado. Use &#39;create &lt;n&gt;&#39;.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   76</span>                <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   77</span>            }</div>
+<div class="line"><span class="lineno">   78</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   79</span>            {</div>
+<div class="line"><span class="lineno">   80</span>                scanf(<span class="stringliteral">&quot; %c&quot;</span>, &amp;letra);</div>
+<div class="line"><span class="lineno">   81</span>                <a class="code hl_function" href="lru_8h.html#a4b835ce419aab66d8d26d2c155416e5d">add_data</a>(cache, letra);</div>
+<div class="line"><span class="lineno">   82</span>            }</div>
+<div class="line"><span class="lineno">   83</span>        }</div>
+<div class="line"><span class="lineno">   84</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">   85</span><span class="comment">        /**</span></div>
+<div class="line"><span class="lineno">   86</span><span class="comment">         * @brief Comando &quot;search&quot;</span></div>
+<div class="line"><span class="lineno">   87</span><span class="comment">         * Busca un elemento en el caché e imprime su posición (1-basada) o -1.</span></div>
+<div class="line"><span class="lineno">   88</span><span class="comment">         * No altera la prioridad del dato.</span></div>
+<div class="line"><span class="lineno">   89</span><span class="comment">         */</span></div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>        <span class="keywordflow">if</span> (strcmp(comando, <span class="stringliteral">&quot;search&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno">   92</span>        {</div>
+<div class="line"><span class="lineno">   93</span>            scanf(<span class="stringliteral">&quot; %c&quot;</span>, &amp;buscar_letra);</div>
+<div class="line"><span class="lineno">   94</span>            <span class="keywordflow">if</span> (cache == NULL)</div>
+<div class="line"><span class="lineno">   95</span>            {</div>
+<div class="line"><span class="lineno">   96</span>                printf(<span class="stringliteral">&quot;\nError: El cache no ha sido creado. Use &#39;create &lt;n&gt;&#39;.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   97</span>            }</div>
+<div class="line"><span class="lineno">   98</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   99</span>            {</div>
+<div class="line"><span class="lineno">  100</span>                posicion = <a class="code hl_function" href="lru_8h.html#abff5b8516d0df8c262f3551a125de27e">search_cache</a>(cache, buscar_letra);</div>
+<div class="line"><span class="lineno">  101</span>                <span class="keywordflow">if</span> (posicion != -1)</div>
+<div class="line"><span class="lineno">  102</span>                {</div>
+<div class="line"><span class="lineno">  103</span>                    printf(<span class="stringliteral">&quot;\nEl dato %c esta presente en la posicion %d del cache.\n&quot;</span>, buscar_letra, posicion);</div>
+<div class="line"><span class="lineno">  104</span>                }</div>
+<div class="line"><span class="lineno">  105</span>                <span class="keywordflow">else</span> </div>
+<div class="line"><span class="lineno">  106</span>                {</div>
+<div class="line"><span class="lineno">  107</span>                    printf(<span class="stringliteral">&quot;\nEl dato %c no esta presente. Devuelve %d.\n&quot;</span>, buscar_letra, posicion);</div>
+<div class="line"><span class="lineno">  108</span>                }</div>
+<div class="line"><span class="lineno">  109</span>            }</div>
+<div class="line"><span class="lineno">  110</span>        }</div>
+<div class="line"><span class="lineno">  111</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">  112</span><span class="comment">        /**</span></div>
+<div class="line"><span class="lineno">  113</span><span class="comment">         * @brief Comando &quot;all&quot;</span></div>
+<div class="line"><span class="lineno">  114</span><span class="comment">         * Muestra el contenido actual del caché, desde MRU (head) a LRU (tail).</span></div>
+<div class="line"><span class="lineno">  115</span><span class="comment">         * No altera la prioridad de los datos.</span></div>
+<div class="line"><span class="lineno">  116</span><span class="comment">         */</span></div>
+<div class="line"><span class="lineno">  117</span> </div>
+<div class="line"><span class="lineno">  118</span>        <span class="keywordflow">if</span> (strcmp(comando, <span class="stringliteral">&quot;all&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno">  119</span>        {</div>
+<div class="line"><span class="lineno">  120</span>            <a class="code hl_function" href="lru_8h.html#aae6f906d264c4d0147ca44675e82269a">display_cache</a>(cache);</div>
+<div class="line"><span class="lineno">  121</span>        }</div>
+<div class="line"><span class="lineno">  122</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">  123</span><span class="comment">        /**</span></div>
+<div class="line"><span class="lineno">  124</span><span class="comment">         * @brief Comando &quot;get&quot;</span></div>
+<div class="line"><span class="lineno">  125</span><span class="comment">         * Utiliza un elemento existente, promoviéndolo a MRU (posición 1).</span></div>
+<div class="line"><span class="lineno">  126</span><span class="comment">         * Si no existe, no hace nada.</span></div>
+<div class="line"><span class="lineno">  127</span><span class="comment">         */</span></div>
+<div class="line"><span class="lineno">  128</span> </div>
+<div class="line"><span class="lineno">  129</span>        <span class="keywordflow">if</span> (strcmp(comando, <span class="stringliteral">&quot;get&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno">  130</span>        {</div>
+<div class="line"><span class="lineno">  131</span>            scanf(<span class="stringliteral">&quot; %c&quot;</span>, &amp;letra);</div>
+<div class="line"><span class="lineno">  132</span>            printf(<span class="stringliteral">&quot;\nSe ha utilizado: %c\n&quot;</span>, letra);</div>
+<div class="line"><span class="lineno">  133</span>            <a class="code hl_function" href="lru_8h.html#aa8350dd503047035b6321cded626414f">get_data</a>(cache, letra);</div>
+<div class="line"><span class="lineno">  134</span>        }</div>
+<div class="line"><span class="lineno">  135</span><span class="comment"></span> </div>
+<div class="line"><span class="lineno">  136</span><span class="comment">        /**</span></div>
+<div class="line"><span class="lineno">  137</span><span class="comment">         * @brief Comando &quot;exit&quot;</span></div>
+<div class="line"><span class="lineno">  138</span><span class="comment">         * Libera la memoria de la caché y sale del bucle principal.</span></div>
+<div class="line"><span class="lineno">  139</span><span class="comment">         */</span></div>
+<div class="line"><span class="lineno">  140</span> </div>
+<div class="line"><span class="lineno">  141</span>        <span class="keywordflow">if</span> (strcmp(comando, <span class="stringliteral">&quot;exit&quot;</span>) == 0)</div>
+<div class="line"><span class="lineno">  142</span>        {</div>
+<div class="line"><span class="lineno">  143</span>            printf(<span class="stringliteral">&quot;\nLiberando cache y saliendo del programa\n&quot;</span>);</div>
+<div class="line"><span class="lineno">  144</span>            <a class="code hl_function" href="lru_8h.html#a953e550388e334ebc573f56c9974271b">free_cache</a>(cache);</div>
+<div class="line"><span class="lineno">  145</span>            ejecutando = 0;</div>
+<div class="line"><span class="lineno">  146</span>        }</div>
+<div class="line"><span class="lineno">  147</span>    }</div>
+<div class="line"><span class="lineno">  148</span>    <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  149</span>}</div>
+<div class="ttc" id="alru_8h_html_a2a0e843767aeea4f433a28b9c54f573a"><div class="ttname"><a href="lru_8h.html#a2a0e843767aeea4f433a28b9c54f573a">menu</a></div><div class="ttdeci">void menu()</div><div class="ttdoc">Muestra el menú de comandos disponibles para el usuario.</div><div class="ttdef"><b>Definition</b> <a href="lru__menu_8c_source.html#l00033">lru_menu.c:33</a></div></div>
+<div class="ttc" id="alru_8h_html_a4b835ce419aab66d8d26d2c155416e5d"><div class="ttname"><a href="lru_8h.html#a4b835ce419aab66d8d26d2c155416e5d">add_data</a></div><div class="ttdeci">void add_data(LRUCache *cache, char data)</div><div class="ttdoc">Implementa la lógica de añadir un dato al caché.</div><div class="ttdef"><b>Definition</b> <a href="lru__add_8c_source.html#l00032">lru_add.c:32</a></div></div>
+<div class="ttc" id="alru_8h_html_a953e550388e334ebc573f56c9974271b"><div class="ttname"><a href="lru_8h.html#a953e550388e334ebc573f56c9974271b">free_cache</a></div><div class="ttdeci">void free_cache(LRUCache *cache)</div><div class="ttdoc">Libera toda la memoria dinámica asociada al caché.</div><div class="ttdef"><b>Definition</b> <a href="lru__free_8c_source.html#l00031">lru_free.c:31</a></div></div>
+<div class="ttc" id="alru_8h_html_aa7ef86fad308723c0e747d432fcd394d"><div class="ttname"><a href="lru_8h.html#aa7ef86fad308723c0e747d432fcd394d">create_cache</a></div><div class="ttdeci">LRUCache * create_cache(int capacity)</div><div class="ttdoc">Crea e inicializa una nueva estructura LRUCache.</div><div class="ttdef"><b>Definition</b> <a href="lru__node__create_8c_source.html#l00026">lru_node_create.c:26</a></div></div>
+<div class="ttc" id="alru_8h_html_aa8350dd503047035b6321cded626414f"><div class="ttname"><a href="lru_8h.html#aa8350dd503047035b6321cded626414f">get_data</a></div><div class="ttdeci">void get_data(LRUCache *cache, char data)</div><div class="ttdoc">Implementa la lógica de &quot;usar&quot; un dato.</div><div class="ttdef"><b>Definition</b> <a href="lru__get_8c_source.html#l00032">lru_get.c:32</a></div></div>
+<div class="ttc" id="alru_8h_html_aae6f906d264c4d0147ca44675e82269a"><div class="ttname"><a href="lru_8h.html#aae6f906d264c4d0147ca44675e82269a">display_cache</a></div><div class="ttdeci">void display_cache(LRUCache *cache)</div><div class="ttdoc">Muestra el contenido completo de la caché desde MRU a LRU.</div><div class="ttdef"><b>Definition</b> <a href="lru__all_8c_source.html#l00029">lru_all.c:29</a></div></div>
+<div class="ttc" id="alru_8h_html_abff5b8516d0df8c262f3551a125de27e"><div class="ttname"><a href="lru_8h.html#abff5b8516d0df8c262f3551a125de27e">search_cache</a></div><div class="ttdeci">int search_cache(LRUCache *cache, char data)</div><div class="ttdoc">Busca un dato en la caché e indica su posición.</div><div class="ttdef"><b>Definition</b> <a href="lru__search_8c_source.html#l00026">lru_search.c:26</a></div></div>
+<div class="ttc" id="astruct_l_r_u_cache_html"><div class="ttname"><a href="struct_l_r_u_cache.html">LRUCache</a></div><div class="ttdoc">Estructura principal que define la caché LRU.</div><div class="ttdef"><b>Definition</b> <a href="lru_8h_source.html#l00045">lru.h:46</a></div></div>
+<div class="ttc" id="astruct_l_r_u_cache_html_a1fa2c8082161e747a687eed93878b406"><div class="ttname"><a href="struct_l_r_u_cache.html#a1fa2c8082161e747a687eed93878b406">LRUCache::capacity</a></div><div class="ttdeci">int capacity</div><div class="ttdef"><b>Definition</b> <a href="lru_8h_source.html#l00047">lru.h:47</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lru__add_8c_source.html#l00032">add_data()</a>, <a class="el" href="lru_8h_source.html#l00047">LRUCache::capacity</a>, <a class="el" href="lru__node__create_8c_source.html#l00026">create_cache()</a>, <a class="el" href="lru__all_8c_source.html#l00029">display_cache()</a>, <a class="el" href="lru__free_8c_source.html#l00031">free_cache()</a>, <a class="el" href="lru__get_8c_source.html#l00032">get_data()</a>, <a class="el" href="lru__menu_8c_source.html#l00033">menu()</a> y <a class="el" href="lru__search_8c_source.html#l00026">search_cache()</a>.</p>
+<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lru_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph.png" border="0" usemap="#alru_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph" loading="lazy" alt=""/></div>
+<map name="alru_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph" id="alru_8c_a0ddf1224851353fc92bfbff6f499fa97_cgraph">
+<area shape="rect" title="Punto de entrada principal del programa LRU." alt="" coords="5,208,55,235"/>
+<area shape="rect" href="lru__add_8c.html#a4b835ce419aab66d8d26d2c155416e5d" title="Implementa la lógica de añadir un dato al caché." alt="" coords="118,107,192,133"/>
+<area shape="poly" title=" " alt="" coords="40,206,66,175,101,143,107,139,110,144,104,147,70,179,44,209"/>
+<area shape="rect" href="lru__node__create_8c.html#aa7ef86fad308723c0e747d432fcd394d" title="Crea e inicializa una nueva estructura LRUCache." alt="" coords="105,157,204,184"/>
+<area shape="poly" title=" " alt="" coords="54,209,105,188,107,193,56,214"/>
+<area shape="rect" href="lru__all_8c.html#aae6f906d264c4d0147ca44675e82269a" title="Muestra el contenido completo de la caché desde MRU a LRU." alt="" coords="103,208,207,235"/>
+<area shape="poly" title=" " alt="" coords="55,219,87,219,87,224,55,224"/>
+<area shape="rect" href="lru__free_8c.html#a953e550388e334ebc573f56c9974271b" title="Libera toda la memoria dinámica asociada al caché." alt="" coords="112,259,198,285"/>
+<area shape="poly" title=" " alt="" coords="56,229,107,250,105,255,54,234"/>
+<area shape="rect" href="lru__get_8c.html#aa8350dd503047035b6321cded626414f" title="Implementa la lógica de &quot;usar&quot; un dato." alt="" coords="119,56,190,83"/>
+<area shape="poly" title=" " alt="" coords="34,206,57,153,77,121,101,93,105,89,108,93,105,97,81,124,62,155,38,208"/>
+<area shape="rect" href="lru__menu_8c.html#a2a0e843767aeea4f433a28b9c54f573a" title="Muestra el menú de comandos disponibles para el usuario." alt="" coords="128,309,182,336"/>
+<area shape="poly" title=" " alt="" coords="44,233,70,264,104,295,116,303,113,307,101,299,66,267,40,237"/>
+<area shape="rect" href="lru__search_8c.html#abff5b8516d0df8c262f3551a125de27e" title="Busca un dato en la caché e indica su posición." alt="" coords="104,360,206,387"/>
+<area shape="poly" title=" " alt="" coords="38,234,62,287,81,318,105,346,108,349,105,353,101,350,77,322,57,290,34,236"/>
+<area shape="rect" href="lru__add__inicio_8c.html#a6c981b179587f9bceb5c38c469d41948" title="Añade un nodo al inicio de la lista doblemente enlazada (posición MRU)." alt="" coords="265,5,344,32"/>
+<area shape="poly" title=" " alt="" coords="187,104,205,93,229,68,253,42,259,38,262,42,257,46,233,71,209,97,190,108"/>
+<area shape="rect" href="lru__add__buscar__nodo_8c.html#ab160f254cba53936d8fc1ae1046e7134" title="Busca un nodo específico en la caché por su dato." alt="" coords="257,56,352,83"/>
+<area shape="poly" title=" " alt="" coords="192,105,247,86,249,91,193,110"/>
+<area shape="rect" href="lru__node__create_8c.html#aa183954c4a6cf9980694182e315b633e" title="Crea un nuevo nodo (Node) con el dato especificado." alt="" coords="258,157,351,184"/>
+<area shape="poly" title=" " alt="" coords="193,130,249,149,247,154,192,135"/>
+<area shape="rect" href="lru__add__remove__node_8c.html#a7caadd271365ace085a1d10dc00b147a" title="Elimina un nodo de su posición actual en la lista doblemente enlazada." alt="" coords="255,107,354,133"/>
+<area shape="poly" title=" " alt="" coords="193,117,239,117,239,123,193,123"/>
+<area shape="poly" title=" " alt="" coords="190,55,249,34,251,40,192,60"/>
+<area shape="poly" title=" " alt="" coords="191,67,242,67,242,72,191,72"/>
+<area shape="poly" title=" " alt="" coords="192,79,250,99,248,104,190,84"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="lru_8c.html">lru.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

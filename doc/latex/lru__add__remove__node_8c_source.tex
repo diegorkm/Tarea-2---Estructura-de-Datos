@@ -1,0 +1,33 @@
+\doxysection{lru\+\_\+add\+\_\+remove\+\_\+node.\+c}
+\hypertarget{lru__add__remove__node_8c_source}{}\label{lru__add__remove__node_8c_source}\mbox{\hyperlink{lru__add__remove__node_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lru_8h}{lru.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00019}00019\ }
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00031}\mbox{\hyperlink{lru_8h_a7caadd271365ace085a1d10dc00b147a}{00031}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lru__add__remove__node_8c_a7caadd271365ace085a1d10dc00b147a}{remove\_node}}\ (\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}}*\ cache,\ \mbox{\hyperlink{struct_node}{Node}}*\ node)}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00032}00032\ \{}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//Manejo\ del\ puntero\ 'PREV'\ (Ajuste\ del\ nodo\ anterior)}}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00035}00035\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (node\ -\/>\ prev\ !=\ NULL)\ \textcolor{comment}{//Si\ el\ nodo\ a\ remover\ no\ es\ el\ head}}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00038}00038\ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{struct_node_aea9fefc3628c3ce98b967e8addf06e88}{prev}}-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}}\ =\ node-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}};\textcolor{comment}{//\ el\ anterior\ pasa\ al\ siguiente}}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00039}00039\ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{else}\ \ \textcolor{comment}{//Si\ el\ nodo\ a\ remover\ es\ el\ head,\ el\ siguiente\ nodo\ se\ convierte\ en\ el\ nuevo\ head\ (MRU)}}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00042}00042\ \ \ \ \ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}}\ =\ node-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}};}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00044}00044\ \ \ \ \ \textcolor{keywordflow}{if}(node\ -\/>\ next\ !=\ NULL)\ \ \textcolor{comment}{//\ Si\ el\ nodo\ a\ remover\ NO\ es\ el\ tail\ (tiene\ un\ nodo\ siguiente)}}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00045}00045\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}}-\/>\mbox{\hyperlink{struct_node_aea9fefc3628c3ce98b967e8addf06e88}{prev}}\ =\ node-\/>\mbox{\hyperlink{struct_node_aea9fefc3628c3ce98b967e8addf06e88}{prev}};\ \textcolor{comment}{//\ el\ siguiente\ apunta\ al\ anterior}}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00047}00047\ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00048}00048\ \ \ \ \ \textcolor{keywordflow}{else}\ }
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00049}00049\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_aa33cac6a0b065de0e3bf816e63c953f7}{tail}}\ =\ node-\/>\mbox{\hyperlink{struct_node_aea9fefc3628c3ce98b967e8addf06e88}{prev}};\ \textcolor{comment}{//\ si\ es\ tail,\ el\ anterior\ es\ el\ nuevo\ tail}}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00051}00051\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00052}00052\ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a0bac014dc8e5262734b325d8a81b2ef2}{current\_size}}-\/-\/;}
+\DoxyCodeLine{\Hypertarget{lru__add__remove__node_8c_source_l00053}00053\ \}}
+
+\end{DoxyCode}

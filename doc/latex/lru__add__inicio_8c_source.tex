@@ -1,0 +1,36 @@
+\doxysection{lru\+\_\+add\+\_\+inicio.\+c}
+\hypertarget{lru__add__inicio_8c_source}{}\label{lru__add__inicio_8c_source}\mbox{\hyperlink{lru__add__inicio_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lru_8h}{lru.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00031}00031\ }
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00032}\mbox{\hyperlink{lru_8h_a6c981b179587f9bceb5c38c469d41948}{00032}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lru__add__inicio_8c_a6c981b179587f9bceb5c38c469d41948}{add\_inicio}}(\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}}*\ cache,\ \mbox{\hyperlink{struct_node}{Node}}*\ node)}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00033}00033\ \{}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//Conecta\ el\ nuevo\ nodo\ con\ la\ estructura\ existente.}}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00035}00035\ \ \ \ \ \textcolor{comment}{//\ Se\ conectan\ los\ nodos\ a\ ambas\ direcciones}}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00036}00036\ \ \ \ \ node-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}}\ =\ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}};}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00037}00037\ \ \ \ \ node-\/>\mbox{\hyperlink{struct_node_aea9fefc3628c3ce98b967e8addf06e88}{prev}}\ =\ NULL;\ \textcolor{comment}{//El\ nuevo\ nodo\ siempre\ será\ el\ primero,\ por\ lo\ que\ su\ 'prev'\ es\ NULL.}}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00039}00039\ \ \ \ \ \textcolor{comment}{//Si\ hay\ elementos,\ el\ antiguo\ head\ apunta\ al\ nuevo\ nodo}}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00040}00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}}\ !=\ NULL)\ }
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00041}00041\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00042}00042\ \ \ \ \ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}}-\/>\mbox{\hyperlink{struct_node_aea9fefc3628c3ce98b967e8addf06e88}{prev}}\ =\ node;}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00045}00045\ \ \ \ \ \textcolor{comment}{//\ Actualizamos\ el\ head\ del\ cache}}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00046}00046\ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}}\ =\ node;}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//\ si\ es\ el\ primer\ elemento,\ este\ tambien\ es\ el\ tail}}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00050}00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_aa33cac6a0b065de0e3bf816e63c953f7}{tail}}\ ==\ NULL)\ }
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00051}00051\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_aa33cac6a0b065de0e3bf816e63c953f7}{tail}}\ =\ node;}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00053}00053\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00054}00054\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00055}00055\ \ \ \ \ \textcolor{comment}{//incrementamos\ el\ tamaño\ actual}}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00056}00056\ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a0bac014dc8e5262734b325d8a81b2ef2}{current\_size}}++;}
+\DoxyCodeLine{\Hypertarget{lru__add__inicio_8c_source_l00057}00057\ \}}
+
+\end{DoxyCode}

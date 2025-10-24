@@ -1,0 +1,81 @@
+\doxysection{lru\+\_\+add\+\_\+buscar\+\_\+nodo.\+c File Reference}
+\hypertarget{lru__add__buscar__nodo_8c}{}\label{lru__add__buscar__nodo_8c}\index{lru\_add\_buscar\_nodo.c@{lru\_add\_buscar\_nodo.c}}
+
+
+Implementación de la función auxiliar para buscar un nodo dentro de la caché.  
+
+
+{\ttfamily \#include "{}lru.\+h"{}}\newline
+Include dependency graph for lru\+\_\+add\+\_\+buscar\+\_\+nodo.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{lru__add__buscar__nodo_8c_ab160f254cba53936d8fc1ae1046e7134}{buscar\+\_\+nodo}} (\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*}cache, char data)
+\begin{DoxyCompactList}\small\item\em Busca un nodo específico en la caché por su dato. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementación de la función auxiliar para buscar un nodo dentro de la caché. 
+
+Esta función recorre la lista doblemente enlazada desde el MRU (head) para encontrar la primera ocurrencia de un dato específico. Es utilizada por las funciones de manipulación del caché como \doxylink{lru_8h_a4b835ce419aab66d8d26d2c155416e5d}{add\+\_\+data()} y \doxylink{lru_8h_aa8350dd503047035b6321cded626414f}{get\+\_\+data()}.
+
+\begin{DoxyAuthor}{Author}
+Diego Peralta, Sebastian Ramirez, Rodolfo Aguilar, Benjamin Reyes 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24 de Octubre de 2025 
+\end{DoxyDate}
+
+
+Definition in file \mbox{\hyperlink{lru__add__buscar__nodo_8c_source}{lru\+\_\+add\+\_\+buscar\+\_\+nodo.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{lru__add__buscar__nodo_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{lru__add__buscar__nodo_8c_ab160f254cba53936d8fc1ae1046e7134}\index{lru\_add\_buscar\_nodo.c@{lru\_add\_buscar\_nodo.c}!buscar\_nodo@{buscar\_nodo}}
+\index{buscar\_nodo@{buscar\_nodo}!lru\_add\_buscar\_nodo.c@{lru\_add\_buscar\_nodo.c}}
+\doxysubsubsection{\texorpdfstring{buscar\_nodo()}{buscar\_nodo()}}
+{\footnotesize\ttfamily \label{lru__add__buscar__nodo_8c_ab160f254cba53936d8fc1ae1046e7134} 
+\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} buscar\+\_\+nodo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*}}]{cache}{, }\item[{char}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Busca un nodo específico en la caché por su dato. 
+
+Recorre la lista desde el head (MRU) hasta el tail (LRU). Si el dato es encontrado (Cache Hit), retorna un puntero al nodo. Si no se encuentra (Cache Miss), retorna NULL. Esta es una operación de solo lectura y no modifica la prioridad del dato.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cache} & Puntero a la estructura \doxylink{struct_l_r_u_cache}{LRUCache}. \\
+\hline
+{\em data} & El dato (carácter) a buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node\texorpdfstring{$\ast$}{*} Puntero al nodo encontrado, o NULL si el dato no está presente. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lru__add__buscar__nodo_8c_source_l00028}{28}} of file \mbox{\hyperlink{lru__add__buscar__nodo_8c_source}{lru\+\_\+add\+\_\+buscar\+\_\+nodo.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00029\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ actual\ =\ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//\ Recorre\ la\ lista\ mientras\ 'actual'\ no\ sea\ NULL.}}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keywordflow}{while}\ (actual\ !=\ NULL)\ }
+\DoxyCodeLine{00033\ \ \ \ \ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (actual-\/>\mbox{\hyperlink{struct_node_a94c9686e27f05bedd604d347d5bad449}{data}}\ ==\ data)\ }
+\DoxyCodeLine{00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ actual;\ \textcolor{comment}{//\ Retorna\ el\ nodo\ si\ encuentra\ el\ dato.}}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ actual\ =\ actual-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}};}
+\DoxyCodeLine{00040\ \ \ \ \ \}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;\ \textcolor{comment}{//\ Retorna\ NULL\ si\ el\ dato\ no\ fue\ encontrado.}}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}

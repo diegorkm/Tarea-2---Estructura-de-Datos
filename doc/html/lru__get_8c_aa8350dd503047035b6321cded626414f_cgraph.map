@@ -1,0 +1,9 @@
+<map id="get_data" name="get_data">
+<area shape="rect" id="Node000001" title="Simula el uso de un dato en la caché LRU, promoviéndolo a MRU si existe." alt="" coords="5,56,77,83"/>
+<area shape="rect" id="Node000002" href="$lru__add__inicio_8c.html#a6c981b179587f9bceb5c38c469d41948" title="Añade un nodo al inicio de la lista doblemente enlazada (posición MRU)." alt="" coords="135,5,214,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="76,53,122,36,124,41,78,58"/>
+<area shape="rect" id="Node000003" href="$lru__add__buscar__nodo_8c.html#ab160f254cba53936d8fc1ae1046e7134" title="Busca un nodo específico en la caché por su dato." alt="" coords="127,56,222,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="77,67,111,67,111,72,77,72"/>
+<area shape="rect" id="Node000004" href="$lru__add__remove__node_8c.html#a7caadd271365ace085a1d10dc00b147a" title="Elimina un nodo de su posición actual en la lista doblemente enlazada." alt="" coords="125,107,224,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="78,80,124,98,122,103,76,85"/>
+</map>

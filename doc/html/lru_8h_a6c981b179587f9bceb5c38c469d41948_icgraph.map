@@ -1,0 +1,10 @@
+<map id="add_inicio" name="add_inicio">
+<area shape="rect" id="Node000001" title="Añade un nodo al inicio de la lista doblemente enlazada (posición MRU)." alt="" coords="225,31,304,57"/>
+<area shape="rect" id="Node000002" href="$lru__add_8c.html#a4b835ce419aab66d8d26d2c155416e5d" title="Implementa la lógica de añadir un dato al caché." alt="" coords="103,5,177,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="209,35,177,29,178,24,210,30"/>
+<area shape="rect" id="Node000004" href="$lru__get_8c.html#aa8350dd503047035b6321cded626414f" title="Implementa la lógica de &quot;usar&quot; un dato." alt="" coords="104,56,176,83"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="210,58,177,65,176,59,209,53"/>
+<area shape="rect" id="Node000003" href="$lru_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Punto de entrada principal del programa LRU." alt="" coords="5,31,55,57"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="88,33,56,41,55,36,87,28"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="89,60,55,52,56,47,90,55"/>
+</map>

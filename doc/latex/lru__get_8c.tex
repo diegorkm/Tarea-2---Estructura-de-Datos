@@ -1,0 +1,101 @@
+\doxysection{lru\+\_\+get.\+c File Reference}
+\hypertarget{lru__get_8c}{}\label{lru__get_8c}\index{lru\_get.c@{lru\_get.c}}
+
+
+Implementación de la función {\ttfamily get\+\_\+data} para simular el uso de un elemento en la caché LRU.  
+
+
+{\ttfamily \#include "{}lru.\+h"{}}\newline
+Include dependency graph for lru\+\_\+get.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lru__get_8c_aa8350dd503047035b6321cded626414f}{get\+\_\+data}} (\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*}cache, char data)
+\begin{DoxyCompactList}\small\item\em Simula el uso de un dato en la caché LRU, promoviéndolo a MRU si existe. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementación de la función {\ttfamily get\+\_\+data} para simular el uso de un elemento en la caché LRU. 
+
+Esta función simula la operación de "{}uso"{} o "{}lectura"{} de un elemento en el caché. Si el elemento existe (Cache Hit), se promueve al inicio (MRU) para reflejar que es el dato más recientemente utilizado. Si no existe (Cache Miss), no hace nada.
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyAuthor}{Authors}
+
+\begin{DoxyItemize}
+\item Diego Peralta
+\item Sebastian Ramirez
+\item Rodolfo Aguilar
+\item Benjamin Reyes 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24 de Octubre de 2025 
+\end{DoxyDate}
+
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{lru__get_8c_source}{lru\+\_\+get.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{lru__get_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{lru__get_8c_aa8350dd503047035b6321cded626414f}\index{lru\_get.c@{lru\_get.c}!get\_data@{get\_data}}
+\index{get\_data@{get\_data}!lru\_get.c@{lru\_get.c}}
+\doxysubsubsection{\texorpdfstring{get\_data()}{get\_data()}}
+{\footnotesize\ttfamily \label{lru__get_8c_aa8350dd503047035b6321cded626414f} 
+void get\+\_\+data (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*}}]{cache}{, }\item[{char}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Simula el uso de un dato en la caché LRU, promoviéndolo a MRU si existe. 
+
+Implementa la lógica de "{}usar"{} un dato.
+
+Busca el dato en el caché.
+\begin{DoxyItemize}
+\item {\bfseries{Cache Hit\+:}} Si el nodo es encontrado, se remueve de su posición actual y se añade al inicio de la lista (MRU).
+\item {\bfseries{Cache Miss\+:}} Si el nodo no es encontrado, no se realiza ninguna modificación.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em cache} & Puntero a la estructura \doxylink{struct_l_r_u_cache}{LRUCache}. \\
+\hline
+{\em data} & El carácter (letra) a buscar y usar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void No retorna valor. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lru__get_8c_source_l00032}{32}} of file \mbox{\hyperlink{lru__get_8c_source}{lru\+\_\+get.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \{\ \ \ \textcolor{comment}{//Comprobación\ de\ errores}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ ==\ NULL\ ||\ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a1fa2c8082161e747a687eed93878b406}{capacity}}\ ==\ 0)\ }
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Error:\ El\ cache\ no\ ha\ sido\ inicializado.\(\backslash\)n"{}});}
+\DoxyCodeLine{00037\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00038\ \ \ \ \ \}}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//Revisa\ si\ existe\ el\ nodo\ en\ el\ cache}}
+\DoxyCodeLine{00040\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ existente\ =\ \mbox{\hyperlink{lru_8h_ab160f254cba53936d8fc1ae1046e7134}{buscar\_nodo}}(cache,\ data);}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordflow}{if}\ (existente\ !=\ NULL)\ \textcolor{comment}{//Si\ existe\ el\ nodo:}}
+\DoxyCodeLine{00042\ \ \ \ \ \{}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{lru_8h_a7caadd271365ace085a1d10dc00b147a}{remove\_node}}(cache,\ existente);\ \textcolor{comment}{//Lo\ quita\ de\ su\ posición\ actual}}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{lru_8h_a6c981b179587f9bceb5c38c469d41948}{add\_inicio}}(cache,\ existente);\ \textcolor{comment}{//Lo\ añade\ al\ inicio\ (MRU)}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nElemento\ \%c\ encontrado\ y\ movido\ a\ inicio.\(\backslash\)n"{}},\ data);}
+\DoxyCodeLine{00046\ \ \ \ \ \}\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{else}\ }
+\DoxyCodeLine{00048\ \ \ \ \ \{\ \ \ \textcolor{comment}{//Si\ el\ nodo\ no\ existe:}}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nElemento\ \%c\ no\ encontrado\ en\ el\ cache.\(\backslash\)n"{}},\ data);}
+\DoxyCodeLine{00050\ \ \ \ \ \}}
+\DoxyCodeLine{00051\ \}\ \ \ }
+
+\end{DoxyCode}

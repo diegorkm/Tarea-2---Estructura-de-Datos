@@ -1,0 +1,179 @@
+\doxysection{lru.\+c File Reference}
+\hypertarget{lru_8c}{}\label{lru_8c}\index{lru.c@{lru.c}}
+
+
+Implementación del bucle principal (main) para el sistema de caché LRU.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include "{}lru.\+h"{}}\newline
+Include dependency graph for lru.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{lru_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}} (int argc, char \texorpdfstring{$\ast$}{*}argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Punto de entrada principal del programa LRU. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementación del bucle principal (main) para el sistema de caché LRU. 
+
+
+\begin{DoxyItemize}
+\item Este archivo contiene la función main que gestiona la interfaz de usuario por línea de comandos, permitiendo la creación, adición, búsqueda, uso, visualización y liberación del caché LRU. \begin{DoxyAuthor}{Authors}
+-\/ Diego Peralta
+\begin{DoxyItemize}
+\item Sebastian Ramirez
+\item Rodolfo Aguilar
+\item Benjamin Reyes 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{lru_8c_source}{lru.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{lru_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{lru_8c_a0ddf1224851353fc92bfbff6f499fa97}\index{lru.c@{lru.c}!main@{main}}
+\index{main@{main}!lru.c@{lru.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily \label{lru_8c_a0ddf1224851353fc92bfbff6f499fa97} 
+int main (\begin{DoxyParamCaption}\item[{int}]{argc}{, }\item[{char \texorpdfstring{$\ast$}{*}}]{argv}{\mbox{[}$\,$\mbox{]}}\end{DoxyParamCaption})}
+
+
+
+Punto de entrada principal del programa LRU. 
+
+
+\begin{DoxyItemize}
+\item Inicializa la caché y gestiona el bucle de comandos interactivo del usuario.
+\item 
+\begin{DoxyParams}{Parameters}
+{\em argc} & Número de argumentos pasados por línea de comandos (no utilizado). \\
+\hline
+{\em argv} & Array de strings de argumentos (no utilizado). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int Retorna 0 si el programa finaliza exitosamente. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}Comando "{}create"{} Inicializa el caché si aún no ha sido creado. Requiere un entero para la capacidad máxima.
+
+Comando "{}add"{} Agrega un nuevo elemento al caché o promueve uno existente a MRU. Requiere un carácter (letra) a añadir.
+
+Comando "{}search"{} Busca un elemento en el caché e imprime su posición (1-\/basada) o -\/1. No altera la prioridad del dato.
+
+Comando "{}all"{} Muestra el contenido actual del caché, desde MRU (head) a LRU (tail). No altera la prioridad de los datos.
+
+Comando "{}get"{} Utiliza un elemento existente, promoviéndolo a MRU (posición 1). Si no existe, no hace nada.
+
+Comando "{}exit"{} Libera la memoria de la caché y sale del bucle principal.
+
+Definition at line \mbox{\hyperlink{lru_8c_source_l00026}{26}} of file \mbox{\hyperlink{lru_8c_source}{lru.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{comment}{//Variables\ de\ control\ y\ manejo\ de\ comandos.}}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{int}\ n,\ ejecutando=1,\ posicion;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{char}\ letra,\ comando[7],\ buscar\_letra;}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{comment}{//Puntero\ a\ la\ estructura\ de\ la\ cache,\ inicializando\ en\ NULL.}}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}}*\ cache\ =\ NULL;}
+\DoxyCodeLine{00033\ \ \ \ \ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{lru_8h_a2a0e843767aeea4f433a28b9c54f573a}{menu}}();\ \textcolor{comment}{//Muestra\ el\ menú\ de\ comandos.}}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{while}\ (ejecutando)\ \textcolor{comment}{//Bucle\ principal\ de\ ejecución}}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}lru>\ "{}});}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\%s"{}},\ comando);\ \textcolor{comment}{//Lee\ el\ comando\ ingresado\ por\ el\ usuario.}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(comando,\ \textcolor{stringliteral}{"{}create"{}})\ ==\ 0)}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ ==\ NULL)}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\%d"{}},\ \&n);}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cache\ =\ \mbox{\hyperlink{lru_8h_aa7ef86fad308723c0e747d432fcd394d}{create\_cache}}(n);\ \ \ \ \textcolor{comment}{//\ Si\ create\_cache\ devuelve\ NULL,\ ya\ ha\ impreso\ el\ error\ interno\ (capacidad\ <\ 5\ o\ malloc\ fallido).}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ !=\ NULL)}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nCache\ creado\ con\ tamanyo:\ \%d\(\backslash\)n"{}},\ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a1fa2c8082161e747a687eed93878b406}{capacity}});}
+\DoxyCodeLine{00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nEl\ cache\ ya\ ha\ sido\ creado\(\backslash\)n"{}});}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00070\ }
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(comando,\ \textcolor{stringliteral}{"{}add"{}})\ ==\ 0)}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ ==\ NULL)}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nError:\ El\ cache\ no\ ha\ sido\ creado.\ Use\ 'create\ <n>'.\(\backslash\)n"{}});}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00079\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\ \%c"{}},\ \&letra);}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{lru_8h_a4b835ce419aab66d8d26d2c155416e5d}{add\_data}}(cache,\ letra);}
+\DoxyCodeLine{00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00084\ }
+\DoxyCodeLine{00090\ }
+\DoxyCodeLine{00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(comando,\ \textcolor{stringliteral}{"{}search"{}})\ ==\ 0)}
+\DoxyCodeLine{00092\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00093\ \ \ \ \ \ \ \ \ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\ \%c"{}},\ \&buscar\_letra);}
+\DoxyCodeLine{00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ ==\ NULL)}
+\DoxyCodeLine{00095\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nError:\ El\ cache\ no\ ha\ sido\ creado.\ Use\ 'create\ <n>'.\(\backslash\)n"{}});}
+\DoxyCodeLine{00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00099\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ posicion\ =\ \mbox{\hyperlink{lru_8h_abff5b8516d0df8c262f3551a125de27e}{search\_cache}}(cache,\ buscar\_letra);}
+\DoxyCodeLine{00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (posicion\ !=\ -\/1)}
+\DoxyCodeLine{00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nEl\ dato\ \%c\ esta\ presente\ en\ la\ posicion\ \%d\ del\ cache.\(\backslash\)n"{}},\ buscar\_letra,\ posicion);}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ }
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nEl\ dato\ \%c\ no\ esta\ presente.\ Devuelve\ \%d.\(\backslash\)n"{}},\ buscar\_letra,\ posicion);}
+\DoxyCodeLine{00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00117\ }
+\DoxyCodeLine{00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(comando,\ \textcolor{stringliteral}{"{}all"{}})\ ==\ 0)}
+\DoxyCodeLine{00119\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{lru_8h_aae6f906d264c4d0147ca44675e82269a}{display\_cache}}(cache);}
+\DoxyCodeLine{00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00122\ }
+\DoxyCodeLine{00128\ }
+\DoxyCodeLine{00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(comando,\ \textcolor{stringliteral}{"{}get"{}})\ ==\ 0)}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00131\ \ \ \ \ \ \ \ \ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\ \%c"{}},\ \&letra);}
+\DoxyCodeLine{00132\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nSe\ ha\ utilizado:\ \%c\(\backslash\)n"{}},\ letra);}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{lru_8h_aa8350dd503047035b6321cded626414f}{get\_data}}(cache,\ letra);}
+\DoxyCodeLine{00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00135\ }
+\DoxyCodeLine{00140\ }
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(comando,\ \textcolor{stringliteral}{"{}exit"{}})\ ==\ 0)}
+\DoxyCodeLine{00142\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nLiberando\ cache\ y\ saliendo\ del\ programa\(\backslash\)n"{}});}
+\DoxyCodeLine{00144\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{lru_8h_a953e550388e334ebc573f56c9974271b}{free\_cache}}(cache);}
+\DoxyCodeLine{00145\ \ \ \ \ \ \ \ \ \ \ \ \ ejecutando\ =\ 0;}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00147\ \ \ \ \ \}}
+\DoxyCodeLine{00148\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00149\ \}}
+
+\end{DoxyCode}

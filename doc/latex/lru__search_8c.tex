@@ -1,0 +1,101 @@
+\doxysection{lru\+\_\+search.\+c File Reference}
+\hypertarget{lru__search_8c}{}\label{lru__search_8c}\index{lru\_search.c@{lru\_search.c}}
+
+
+Implementación de la función para buscar un dato en la caché LRU sin alterar su prioridad.  
+
+
+{\ttfamily \#include "{}lru.\+h"{}}\newline
+Include dependency graph for lru\+\_\+search.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{lru__search_8c_abff5b8516d0df8c262f3551a125de27e}{search\+\_\+cache}} (\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*}cache, char data)
+\begin{DoxyCompactList}\small\item\em Busca un dato en la caché LRU y devuelve su posición (1-\/basada). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementación de la función para buscar un dato en la caché LRU sin alterar su prioridad. 
+
+Esta función es fundamental para verificar la existencia de un dato (Cache Hit/\+Miss) en los comandos \textquotesingle{}search\textquotesingle{} y \textquotesingle{}get\textquotesingle{}. Retorna la posición del dato (1-\/basada) o -\/1 si no se encuentra, manteniendo la naturaleza de solo lectura.
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyAuthor}{Authors}
+
+\begin{DoxyItemize}
+\item Diego Peralta
+\item Sebastian Ramirez
+\item Rodolfo Aguilar
+\item Benjamin Reyes 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24 de Octubre de 2025 
+\end{DoxyDate}
+
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{lru__search_8c_source}{lru\+\_\+search.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{lru__search_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{lru__search_8c_abff5b8516d0df8c262f3551a125de27e}\index{lru\_search.c@{lru\_search.c}!search\_cache@{search\_cache}}
+\index{search\_cache@{search\_cache}!lru\_search.c@{lru\_search.c}}
+\doxysubsubsection{\texorpdfstring{search\_cache()}{search\_cache()}}
+{\footnotesize\ttfamily \label{lru__search_8c_abff5b8516d0df8c262f3551a125de27e} 
+int search\+\_\+cache (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*}}]{cache}{, }\item[{char}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Busca un dato en la caché LRU y devuelve su posición (1-\/basada). 
+
+Busca un dato en la caché e indica su posición.
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em cache} & Puntero a la estructura \doxylink{struct_l_r_u_cache}{LRUCache}.\} \\
+\hline
+{\em data} & El carácter (letra) a buscar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int La posición del dato (1-\/basada) si se encuentra, o -\/1 si no está. 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Definition at line \mbox{\hyperlink{lru__search_8c_source_l00026}{26}} of file \mbox{\hyperlink{lru__search_8c_source}{lru\+\_\+search.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00027\ \{}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ position;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ ==\ NULL)\ \textcolor{comment}{//Valida\ si\ la\ cache\ ha\ sido\ creada}}
+\DoxyCodeLine{00030\ \ \ \ \ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00032\ \ \ \ \ \}}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ current\ =\ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}};}
+\DoxyCodeLine{00035\ \ \ \ \ position\ =\ 1;\ \textcolor{comment}{//\ La\ posición\ se\ cuenta\ desde\ 1\ (el\ head\ es\ la\ posición\ 1).}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordflow}{while}\ (current\ !=\ NULL)\ \textcolor{comment}{//\ Recorre\ la\ lista\ enlazada\ desde\ el\ MRU\ (head)\ hasta\ el\ LRU\ (tail).}}
+\DoxyCodeLine{00038\ \ \ \ \ \{}
+\DoxyCodeLine{00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current-\/>\mbox{\hyperlink{struct_node_a94c9686e27f05bedd604d347d5bad449}{data}}\ ==\ data)}
+\DoxyCodeLine{00040\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ position;\ \ \textcolor{comment}{//Dato\ encontrado,\ devuelve\ la\ posición.}}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00043\ \ \ \ \ \ \ \ \ current\ =\ current-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}};}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ position++;}
+\DoxyCodeLine{00045\ \ \ \ \ \}}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;\ \textcolor{comment}{//\ Si\ no\ encuentra\ el\ dato,\ devuelve\ -\/1.}}
+\DoxyCodeLine{00048\ \}}
+
+\end{DoxyCode}

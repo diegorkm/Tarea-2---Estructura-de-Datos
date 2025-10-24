@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Caché LRU: Caché LRU - Implementación en C</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Caché LRU<span id="projectnumber">&#160;v1.0</span>
+   </div>
+   <div id="projectbrief">Implementación de un sistema de Caché LRU (Least Recently Used) en C con lista doblemente enlazada</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('index.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div><div class="header">
+  <div class="headertitle"><div class="title">Caché LRU - Implementación en C </div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
+Descripción General</h1>
+<p>Este proyecto implementa un <b>sistema de Caché LRU (Least Recently Used)</b> utilizando una estructura de datos de <b>lista doblemente enlazada</b> en lenguaje C.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md2"></a>
+Autores</h1>
+<ul>
+<li>Diego Peralta</li>
+<li>Sebastian Ramirez</li>
+<li>Rodolfo Aguilar</li>
+<li>Benjamin Reyes</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md3"></a>
+Características Principales</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md4"></a>
+Estructuras de Datos</h2>
+<p>El sistema se compone de dos estructuras principales:</p>
+<ul>
+<li><b>Node</b>: Representa un nodo individual en la lista doblemente enlazada</li>
+<li><b>LRUCache</b>: Estructura principal que gestiona el caché</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md5"></a>
+Operaciones Soportadas</h2>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Operación  </th><th class="markdownTableHeadNone">Descripción  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">create &lt;n&gt;</span>  </td><td class="markdownTableBodyNone">Crea un caché con capacidad n (mínimo 5)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">add &lt;x&gt;</span>  </td><td class="markdownTableBodyNone">Añade o promueve el elemento x al MRU  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">get &lt;x&gt;</span>  </td><td class="markdownTableBodyNone">Usa el elemento x, promoviéndolo al MRU  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">search &lt;x&gt;</span>  </td><td class="markdownTableBodyNone">Busca x sin alterar su prioridad  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">all</span>  </td><td class="markdownTableBodyNone">Muestra el contenido completo del caché  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">exit</span>  </td><td class="markdownTableBodyNone">Libera memoria y termina el programa  </td></tr>
+</table>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md6"></a>
+Arquitectura del Sistema</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md7"></a>
+Política LRU</h2>
+<p>El algoritmo <b>Least Recently Used</b> mantiene los elementos más recientemente usados al inicio de la lista (MRU - Most Recently Used) y los menos usados al final (LRU - Least Recently Used).</p>
+<p><b>Comportamiento:</b></p><ul>
+<li><b>Cache Hit</b>: Si el elemento existe, se mueve al inicio (MRU)</li>
+<li><b>Cache Miss</b>: Si no existe y hay espacio, se añade al inicio</li>
+<li><b>Reemplazo</b>: Si el caché está lleno, se elimina el LRU (tail) antes de añadir</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md8"></a>
+Diagrama de Flujo</h2>
+<div class="fragment"><div class="line">MRU (head) ←→ [Nodo 1] ←→ [Nodo 2] ←→ ... ←→ [Nodo N] ←→ LRU (tail)</div>
+<div class="line">     ↑                                                      ↑</div>
+<div class="line">  Más reciente                                      Menos reciente</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md9"></a>
+Estructura de Archivos</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Archivo  </th><th class="markdownTableHeadNone">Propósito  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">lru.h</span>  </td><td class="markdownTableBodyNone">Definiciones de estructuras y prototipos  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">lru.c</span>  </td><td class="markdownTableBodyNone">Función main y bucle interactivo  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">lru_node_create.c</span>  </td><td class="markdownTableBodyNone">Creación de caché y nodos  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">lru_add.c</span>  </td><td class="markdownTableBodyNone">Lógica de añadir/usar elementos  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">lru_add_buscar_nodo.c</span>  </td><td class="markdownTableBodyNone">Búsqueda interna de nodos  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">lru_add_inicio.c</span>  </td><td class="markdownTableBodyNone">Inserción al inicio (MRU)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">lru_add_remove_node.c</span>  </td><td class="markdownTableBodyNone">Remoción de nodos  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">lru_get.c</span>  </td><td class="markdownTableBodyNone">Uso de elementos existentes  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">lru_search.c</span>  </td><td class="markdownTableBodyNone">Búsqueda de posición  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">lru_all.c</span>  </td><td class="markdownTableBodyNone">Visualización del caché  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone"><span class="tt">lru_menu.c</span>  </td><td class="markdownTableBodyNone">Menú de comandos  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone"><span class="tt">lru_free.c</span>  </td><td class="markdownTableBodyNone">Liberación de memoria  </td></tr>
+</table>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md10"></a>
+Compilación y Ejecución</h1>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md11"></a>
+Requisitos</h2>
+<ul>
+<li>Compilador GCC o compatible</li>
+<li>Make (opcional)</li>
+</ul>
+<h2 class="doxsection"><a class="anchor" id="autotoc_md12"></a>
+Compilar</h2>
+<div class="fragment"><div class="line">gcc -o lru lru.c lru_add.c lru_add_buscar_nodo.c lru_add_inicio.c \</div>
+<div class="line">    lru_add_remove_node.c lru_all.c lru_free.c lru_get.c \</div>
+<div class="line">    lru_menu.c lru_node_create.c lru_search.c -Wall</div>
+</div><!-- fragment --><h2 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
+Ejecutar</h2>
+<div class="fragment"><div class="line">./lru</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
+Ejemplo de Uso</h1>
+<div class="fragment"><div class="line">lru&gt; create 5</div>
+<div class="line">Cache creado con tamaño: 5</div>
+<div class="line"> </div>
+<div class="line">lru&gt; add A</div>
+<div class="line">Elemento A añadido al cache.</div>
+<div class="line"> </div>
+<div class="line">lru&gt; add B</div>
+<div class="line">Elemento B añadido al cache.</div>
+<div class="line"> </div>
+<div class="line">lru&gt; all</div>
+<div class="line">Contenido del cache: [B] - [A]</div>
+<div class="line"> </div>
+<div class="line">lru&gt; get A</div>
+<div class="line">Elemento A encontrado y movido a inicio.</div>
+<div class="line"> </div>
+<div class="line">lru&gt; all</div>
+<div class="line">Contenido del cache: [A] - [B]</div>
+<div class="line"> </div>
+<div class="line">lru&gt; search A</div>
+<div class="line">El dato A esta presente en la posicion 1 del cache.</div>
+<div class="line"> </div>
+<div class="line">lru&gt; exit</div>
+<div class="line">Liberando cache y saliendo del programa</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
+Complejidad Computacional</h1>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Operación  </th><th class="markdownTableHeadNone">Complejidad  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Búsqueda  </td><td class="markdownTableBodyNone">O(n)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Inserción al inicio  </td><td class="markdownTableBodyNone">O(1)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Remoción  </td><td class="markdownTableBodyNone">O(1)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Añadir elemento  </td><td class="markdownTableBodyNone">O(n)  </td></tr>
+</table>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
+Documentación Adicional</h1>
+<p>La documentación completa generada con Doxygen se encuentra en la carpeta <span class="tt">doc/html/</span>.</p>
+<p>Para visualizarla, abre el archivo <span class="tt">doc/html/index.html</span> en tu navegador.</p>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md17"></a>
+Generar Documentación</h1>
+<div class="fragment"><div class="line">doxygen Doxyfile</div>
+</div><!-- fragment --><h1 class="doxsection"><a class="anchor" id="autotoc_md18"></a>
+Notas Importantes</h1>
+<ul>
+<li>La capacidad mínima del caché es 5 elementos</li>
+<li>Los datos almacenados son caracteres (letras mayúsculas)</li>
+<li>La memoria se libera automáticamente al usar el comando <span class="tt">exit</span></li>
+<li>El sistema maneja correctamente casos de caché lleno y vacío</li>
+</ul>
+<h1 class="doxsection"><a class="anchor" id="autotoc_md19"></a>
+Manejo de Errores</h1>
+<p>El sistema incluye validaciones para:</p><ul>
+<li>Capacidad mínima de caché</li>
+<li>Caché no inicializado</li>
+<li>Errores de asignación de memoria</li>
+<li>Operaciones sobre caché vacío</li>
+</ul>
+<hr  />
+<p><b>Fecha</b>: Octubre 2025 </p>
+</div></div><!-- PageDoc -->
+<a href="doxygen_crawl.html"></a>
+</div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

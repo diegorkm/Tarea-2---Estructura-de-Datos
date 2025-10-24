@@ -1,0 +1,100 @@
+\doxysection{lru\+\_\+add\+\_\+remove\+\_\+node.\+c File Reference}
+\hypertarget{lru__add__remove__node_8c}{}\label{lru__add__remove__node_8c}\index{lru\_add\_remove\_node.c@{lru\_add\_remove\_node.c}}
+
+
+Implementación de la función para remover un nodo de la lista doblemente enlazada de la caché LRU.  
+
+
+{\ttfamily \#include "{}lru.\+h"{}}\newline
+Include dependency graph for lru\+\_\+add\+\_\+remove\+\_\+node.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lru__add__remove__node_8c_a7caadd271365ace085a1d10dc00b147a}{remove\+\_\+node}} (\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*}cache, \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Remueve un nodo específico de la lista doblemente enlazada del caché. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementación de la función para remover un nodo de la lista doblemente enlazada de la caché LRU. 
+
+Esta función ajusta los punteros \textquotesingle{}prev\textquotesingle{} y \textquotesingle{}next\textquotesingle{} de los nodos adyacentes al nodo que se desea remover, garantizando que la lista se mantenga coherente. También actualiza los punteros \textquotesingle{}head\textquotesingle{} y \textquotesingle{}tail\textquotesingle{} del caché si el nodo removido era uno de ellos.
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyAuthor}{Authors}
+
+\begin{DoxyItemize}
+\item Diego Peralta
+\item Sebastian Ramirez
+\item Rodolfo Aguilar
+\item Benjamin Reyes 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24 de Octubre de 2025 
+\end{DoxyDate}
+
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{lru__add__remove__node_8c_source}{lru\+\_\+add\+\_\+remove\+\_\+node.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{lru__add__remove__node_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{lru__add__remove__node_8c_a7caadd271365ace085a1d10dc00b147a}\index{lru\_add\_remove\_node.c@{lru\_add\_remove\_node.c}!remove\_node@{remove\_node}}
+\index{remove\_node@{remove\_node}!lru\_add\_remove\_node.c@{lru\_add\_remove\_node.c}}
+\doxysubsubsection{\texorpdfstring{remove\_node()}{remove\_node()}}
+{\footnotesize\ttfamily \label{lru__add__remove__node_8c_a7caadd271365ace085a1d10dc00b147a} 
+void remove\+\_\+node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*}}]{cache}{, }\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Remueve un nodo específico de la lista doblemente enlazada del caché. 
+
+Elimina un nodo de su posición actual en la lista doblemente enlazada.
+
+La remoción funciona ajustando los punteros del nodo anterior y posterior al nodo dado. También maneja los casos especiales donde el nodo a remover es el \textquotesingle{}head\textquotesingle{} (MRU) o el \textquotesingle{}tail\textquotesingle{} (LRU) de la caché.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cache} & Puntero a la estructura \doxylink{struct_l_r_u_cache}{LRUCache}. \\
+\hline
+{\em node} & Puntero al nodo que se desea desvincular de la lista. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void No retorna valor. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lru__add__remove__node_8c_source_l00031}{31}} of file \mbox{\hyperlink{lru__add__remove__node_8c_source}{lru\+\_\+add\+\_\+remove\+\_\+node.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//Manejo\ del\ puntero\ 'PREV'\ (Ajuste\ del\ nodo\ anterior)}}
+\DoxyCodeLine{00035\ \ \ \ \ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordflow}{if}\ (node\ -\/>\ prev\ !=\ NULL)\ \textcolor{comment}{//Si\ el\ nodo\ a\ remover\ no\ es\ el\ head}}
+\DoxyCodeLine{00037\ \ \ \ \ \{}
+\DoxyCodeLine{00038\ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{struct_node_aea9fefc3628c3ce98b967e8addf06e88}{prev}}-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}}\ =\ node-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}};\textcolor{comment}{//\ el\ anterior\ pasa\ al\ siguiente}}
+\DoxyCodeLine{00039\ \ \ \ \ \}\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{else}\ \ \textcolor{comment}{//Si\ el\ nodo\ a\ remover\ es\ el\ head,\ el\ siguiente\ nodo\ se\ convierte\ en\ el\ nuevo\ head\ (MRU)}}
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}}\ =\ node-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}};}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordflow}{if}(node\ -\/>\ next\ !=\ NULL)\ \ \textcolor{comment}{//\ Si\ el\ nodo\ a\ remover\ NO\ es\ el\ tail\ (tiene\ un\ nodo\ siguiente)}}
+\DoxyCodeLine{00045\ \ \ \ \ \{}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ node-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}}-\/>\mbox{\hyperlink{struct_node_aea9fefc3628c3ce98b967e8addf06e88}{prev}}\ =\ node-\/>\mbox{\hyperlink{struct_node_aea9fefc3628c3ce98b967e8addf06e88}{prev}};\ \textcolor{comment}{//\ el\ siguiente\ apunta\ al\ anterior}}
+\DoxyCodeLine{00047\ \ \ \ \ \}\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordflow}{else}\ }
+\DoxyCodeLine{00049\ \ \ \ \ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_aa33cac6a0b065de0e3bf816e63c953f7}{tail}}\ =\ node-\/>\mbox{\hyperlink{struct_node_aea9fefc3628c3ce98b967e8addf06e88}{prev}};\ \textcolor{comment}{//\ si\ es\ tail,\ el\ anterior\ es\ el\ nuevo\ tail}}
+\DoxyCodeLine{00051\ \ \ \ \ \}}
+\DoxyCodeLine{00052\ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a0bac014dc8e5262734b325d8a81b2ef2}{current\_size}}-\/-\/;}
+\DoxyCodeLine{00053\ \}}
+
+\end{DoxyCode}
