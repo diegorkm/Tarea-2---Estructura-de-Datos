@@ -1,0 +1,11 @@
+<map id="add_data" name="add_data">
+<area shape="rect" id="Node000001" title="Implementa la lógica de añadir un dato al caché." alt="" coords="5,81,80,108"/>
+<area shape="rect" id="Node000002" href="$lru__add__inicio_8c.html#a6c981b179587f9bceb5c38c469d41948" title="Añade un nodo al inicio de la lista doblemente enlazada (posición MRU)." alt="" coords="138,5,217,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,78,126,42,134,37,137,42,129,46,67,83"/>
+<area shape="rect" id="Node000003" href="$lru__add__buscar__nodo_8c.html#ab160f254cba53936d8fc1ae1046e7134" title="Busca un nodo específico en la caché por su dato." alt="" coords="130,56,225,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="80,85,114,79,115,84,81,90"/>
+<area shape="rect" id="Node000004" href="$lru__node__create_8c.html#aa183954c4a6cf9980694182e315b633e" title="Crea un nuevo nodo (Node) con el dato especificado." alt="" coords="131,107,224,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="81,99,116,106,115,111,80,104"/>
+<area shape="rect" id="Node000005" href="$lru__add__remove__node_8c.html#a7caadd271365ace085a1d10dc00b147a" title="Elimina un nodo de su posición actual en la lista doblemente enlazada." alt="" coords="128,157,227,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="67,106,129,143,137,147,134,152,126,148,65,111"/>
+</map>

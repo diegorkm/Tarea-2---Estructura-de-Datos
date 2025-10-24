@@ -1,0 +1,38 @@
+\doxysection{lru\+\_\+all.\+c}
+\hypertarget{lru__all_8c_source}{}\label{lru__all_8c_source}\mbox{\hyperlink{lru__all_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lru_8h}{lru.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00029}\mbox{\hyperlink{lru_8h_aae6f906d264c4d0147ca44675e82269a}{00029}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lru__all_8c_aae6f906d264c4d0147ca44675e82269a}{display\_cache}}(\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}}*\ cache)}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00030}00030\ \{}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ ==\ NULL)\ \textcolor{comment}{//Verificación\ de\ errores}}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00032}00032\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00033}00033\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}No\ hay\ cache.\ Utiliza\ 'create\ <n>'\ primero.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00035}00035\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00037}00037\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ current\ =\ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}};}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (current\ ==\ NULL)\ }
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00040}00040\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00041}00041\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Contenido\ del\ cache:\ [vacio]\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00043}00043\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00045}00045\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Contenido\ del\ cache:\ "{}});}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00046}00046\ \ \ \ \ \textcolor{keywordflow}{while}\ (current\ !=\ NULL)\ \textcolor{comment}{//\ Recorre\ de\ MRU\ (head)\ a\ LRU\ (tail).}}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00047}00047\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00048}00048\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}[\%c]"{}},\ current-\/>\mbox{\hyperlink{struct_node_a94c9686e27f05bedd604d347d5bad449}{data}});}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00049}00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}}\ !=\ NULL)\ }
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ -\/\ "{}});}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00053}00053\ \ \ \ \ \ \ \ \ current\ =\ current-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}};}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00054}00054\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00055}00055\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{lru__all_8c_source_l00056}00056\ \}}
+
+\end{DoxyCode}

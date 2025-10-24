@@ -1,0 +1,93 @@
+\doxysection{lru\+\_\+menu.\+c File Reference}
+\hypertarget{lru__menu_8c}{}\label{lru__menu_8c}\index{lru\_menu.c@{lru\_menu.c}}
+
+
+Implementación de la función que muestra el menú de comandos de la aplicación LRU.  
+
+
+{\ttfamily \#include "{}lru.\+h"{}}\newline
+Include dependency graph for lru\+\_\+menu.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lru__menu_8c_a2a0e843767aeea4f433a28b9c54f573a}{menu}} ()
+\begin{DoxyCompactList}\small\item\em Imprime en la consola el listado de comandos disponibles para la interacción del usuario. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementación de la función que muestra el menú de comandos de la aplicación LRU. 
+
+Esta función proporciona al usuario una referencia rápida de todos los comandos disponibles para interactuar con el sistema de caché.
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyAuthor}{Authors}
+
+\begin{DoxyItemize}
+\item Diego Peralta
+\item Sebastian Ramirez
+\item Rodolfo Aguilar
+\item Benjamin Reyes 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24 de Octubre de 2025 
+\end{DoxyDate}
+
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{lru__menu_8c_source}{lru\+\_\+menu.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{lru__menu_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{lru__menu_8c_a2a0e843767aeea4f433a28b9c54f573a}\index{lru\_menu.c@{lru\_menu.c}!menu@{menu}}
+\index{menu@{menu}!lru\_menu.c@{lru\_menu.c}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily \label{lru__menu_8c_a2a0e843767aeea4f433a28b9c54f573a} 
+void menu (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Imprime en la consola el listado de comandos disponibles para la interacción del usuario. 
+
+Muestra el menú de comandos disponibles para el usuario.
+
+Los comandos incluyen\+:
+\begin{DoxyItemize}
+\item \textquotesingle{}create $<$n$>$\textquotesingle{} para inicializar la caché\mbox{[}cite\+: 15\mbox{]}.
+\item \textquotesingle{}add $<$x$>$\textquotesingle{} para añadir/promover un dato\mbox{[}cite\+: 18\mbox{]}.
+\item \textquotesingle{}search $<$x$>$\textquotesingle{} para buscar un dato sin alterar su prioridad\mbox{[}cite\+: 20\mbox{]}.
+\item \textquotesingle{}get $<$x$>$\textquotesingle{} para "{}usar"{} un dato y modificar su prioridad\mbox{[}cite\+: 17\mbox{]}.
+\item \textquotesingle{}all\textquotesingle{} para ver el contenido del caché\mbox{[}cite\+: 20\mbox{]}.
+\item \textquotesingle{}exit\textquotesingle{} para liberar la memoria y terminar el programa\mbox{[}cite\+: 57\mbox{]}.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em void} & No recibe parámetros. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void No retorna valor. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lru__menu_8c_source_l00033}{33}} of file \mbox{\hyperlink{lru__menu_8c_source}{lru\+\_\+menu.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00034\ \{}
+\DoxyCodeLine{00035\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nComandos\ disponibles:\(\backslash\)n"{}});}
+\DoxyCodeLine{00036\ \ \ \ \ printf(\textcolor{stringliteral}{"{}create\ <n>\ :\ Crea\ un\ cache\ de\ tamanyo\ n\(\backslash\)n"{}});}
+\DoxyCodeLine{00037\ \ \ \ \ printf(\textcolor{stringliteral}{"{}add\ <x>\ \ \ \ :\ Anyade\ el\ elemento\ x\ al\ cache\(\backslash\)n"{}});}
+\DoxyCodeLine{00038\ \ \ \ \ printf(\textcolor{stringliteral}{"{}search\ <x>\ :\ Busca\ un\ elemento\ x\ en\ el\ cache\(\backslash\)n"{}});}
+\DoxyCodeLine{00039\ \ \ \ \ printf(\textcolor{stringliteral}{"{}get\ <x>\ \ \ \ :\ Utiliza\ el\ elemento\ x\ del\ cache\(\backslash\)n"{}});}
+\DoxyCodeLine{00040\ \ \ \ \ printf(\textcolor{stringliteral}{"{}all\ \ \ \ \ \ \ \ :\ Muestra\ el\ contenido\ del\ cache\(\backslash\)n"{}});}
+\DoxyCodeLine{00041\ \ \ \ \ printf(\textcolor{stringliteral}{"{}exit\ \ \ \ \ \ \ :\ Libera\ el\ cache\ y\ sale\ del\ programa\(\backslash\)n\(\backslash\)n"{}});}
+\DoxyCodeLine{00042\ \}}
+
+\end{DoxyCode}

@@ -1,0 +1,25 @@
+<map id="lru.h" name="lru.h">
+<area shape="rect" id="Node000001" title="Archivo de cabecera principal para el sistema de Caché LRU." alt="" coords="683,5,729,32"/>
+<area shape="rect" id="Node000002" href="$lru_8c.html" title="Implementación del bucle principal (main) para el sistema de caché LRU." alt="" coords="5,80,52,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="667,23,562,26,412,35,239,53,64,83,53,86,51,80,63,77,238,48,412,30,562,21,667,18"/>
+<area shape="rect" id="Node000003" href="$lru__add_8c.html" title="Implementación de la función principal para añadir (o usar) un dato en la caché LRU." alt="" coords="75,80,150,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="668,25,452,44,308,61,162,83,151,85,150,80,161,77,307,55,451,39,667,20"/>
+<area shape="rect" id="Node000004" href="$lru__add__buscar__nodo_8c.html" title="Implementación de la función auxiliar para buscar un nodo dentro de la caché." alt="" coords="174,80,329,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="668,29,330,82,329,77,667,23"/>
+<area shape="rect" id="Node000005" href="$lru__add__inicio_8c.html" title="Implementación de la función para añadir o promover un nodo al inicio (MRU) de la caché LRU." alt="" coords="353,80,464,107"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="668,32,461,82,460,77,667,27"/>
+<area shape="rect" id="Node000006" href="$lru__add__remove__node_8c.html" title="Implementación de la función para remover un nodo de la lista doblemente enlazada de la caché LRU." alt="" coords="489,80,648,107"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="670,42,594,82,591,77,668,37"/>
+<area shape="rect" id="Node000007" href="$lru__all_8c.html" title="Implementación de la función para mostrar el contenido completo de la caché LRU." alt="" coords="673,80,739,107"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="708,48,708,80,703,80,703,48"/>
+<area shape="rect" id="Node000008" href="$lru__free_8c.html" title="Implementación de la función free_cache para liberar toda la memoria dinámica de la caché LRU." alt="" coords="763,80,838,107"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="736,40,786,77,783,82,733,44"/>
+<area shape="rect" id="Node000009" href="$lru__get_8c.html" title="Implementación de la función get_data para simular el uso de un elemento en la caché LRU." alt="" coords="862,80,934,107"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="745,32,865,77,863,82,743,37"/>
+<area shape="rect" id="Node000010" href="$lru__menu_8c.html" title="Implementación de la función que muestra el menú de comandos de la aplicación LRU." alt="" coords="958,80,1043,107"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="745,27,958,79,957,84,744,32"/>
+<area shape="rect" id="Node000011" href="$lru__node__create_8c.html" title="Implementación de las funciones para la creación de la estructura LRUCache y de los nodos Node." alt="" coords="1068,80,1192,107"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="745,24,1068,79,1067,84,744,29"/>
+<area shape="rect" id="Node000012" href="$lru__search_8c.html" title="Implementación de la función para buscar un dato en la caché LRU sin alterar su prioridad." alt="" coords="1216,80,1308,107"/>
+<area shape="poly" id="edge11_Node000001_Node000012" title=" " alt="" coords="745,21,942,42,1205,77,1216,79,1215,85,1204,83,942,47,744,26"/>
+</map>

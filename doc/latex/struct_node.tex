@@ -1,0 +1,73 @@
+\doxysection{Node Struct Reference}
+\hypertarget{struct_node}{}\label{struct_node}\index{Node@{Node}}
+
+
+Representa un nodo en la lista doblemente enlazada de la caché.  
+
+
+
+
+{\ttfamily \#include $<$lru.\+h$>$}
+
+
+
+Collaboration diagram for Node\+:
+% FIG 0
+\doxysubsubsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{struct_node_a94c9686e27f05bedd604d347d5bad449}{data}}
+\item 
+struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_node_aea9fefc3628c3ce98b967e8addf06e88}{prev}}
+\item 
+struct \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa un nodo en la lista doblemente enlazada de la caché. 
+
+Los nodos almacenan el dato y los punteros para la gestión de la prioridad. 
+
+Definition at line \mbox{\hyperlink{lru_8h_source_l00030}{30}} of file \mbox{\hyperlink{lru_8h_source}{lru.\+h}}.
+
+
+
+\label{doc-variable-members}
+\Hypertarget{struct_node_doc-variable-members}
+\doxysubsection{Field Documentation}
+\Hypertarget{struct_node_a94c9686e27f05bedd604d347d5bad449}\index{Node@{Node}!data@{data}}
+\index{data@{data}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily \label{struct_node_a94c9686e27f05bedd604d347d5bad449} 
+char Node\+::data}
+
+
+
+Definition at line \mbox{\hyperlink{lru_8h_source_l00032}{32}} of file \mbox{\hyperlink{lru_8h_source}{lru.\+h}}.
+
+\Hypertarget{struct_node_af67b110ca1a258b793bf69d306929b22}\index{Node@{Node}!next@{next}}
+\index{next@{next}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{next}{next}}
+{\footnotesize\ttfamily \label{struct_node_af67b110ca1a258b793bf69d306929b22} 
+struct \mbox{\hyperlink{struct_node}{Node}}\texorpdfstring{$\ast$}{*} Node\+::next}
+
+
+
+Definition at line \mbox{\hyperlink{lru_8h_source_l00034}{34}} of file \mbox{\hyperlink{lru_8h_source}{lru.\+h}}.
+
+\Hypertarget{struct_node_aea9fefc3628c3ce98b967e8addf06e88}\index{Node@{Node}!prev@{prev}}
+\index{prev@{prev}!Node@{Node}}
+\doxysubsubsection{\texorpdfstring{prev}{prev}}
+{\footnotesize\ttfamily \label{struct_node_aea9fefc3628c3ce98b967e8addf06e88} 
+struct \mbox{\hyperlink{struct_node}{Node}}\texorpdfstring{$\ast$}{*} Node\+::prev}
+
+
+
+Definition at line \mbox{\hyperlink{lru_8h_source_l00033}{33}} of file \mbox{\hyperlink{lru_8h_source}{lru.\+h}}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{lru_8h}{lru.\+h}}\end{DoxyCompactItemize}

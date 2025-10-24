@@ -1,0 +1,108 @@
+\doxysection{lru.\+c}
+\hypertarget{lru_8c_source}{}\label{lru_8c_source}\mbox{\hyperlink{lru_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00014}00014\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00015}00015\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00016}00016\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lru_8h}{lru.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00026}\mbox{\hyperlink{lru_8c_a0ddf1224851353fc92bfbff6f499fa97}{00026}}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{lru_8c_a0ddf1224851353fc92bfbff6f499fa97}{main}}(\textcolor{keywordtype}{int}\ argc,\ \textcolor{keywordtype}{char}*\ argv[])\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00027}00027\ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00028}00028\ \ \ \ \ \textcolor{comment}{//Variables\ de\ control\ y\ manejo\ de\ comandos.}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00029}00029\ \ \ \ \ \textcolor{keywordtype}{int}\ n,\ ejecutando=1,\ posicion;}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00030}00030\ \ \ \ \ \textcolor{keywordtype}{char}\ letra,\ comando[7],\ buscar\_letra;}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//Puntero\ a\ la\ estructura\ de\ la\ cache,\ inicializando\ en\ NULL.}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00032}00032\ \ \ \ \ \mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}}*\ cache\ =\ NULL;}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00033}00033\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00034}00034\ \ \ \ \ \mbox{\hyperlink{lru_8h_a2a0e843767aeea4f433a28b9c54f573a}{menu}}();\ \textcolor{comment}{//Muestra\ el\ menú\ de\ comandos.}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00036}00036\ \ \ \ \ \textcolor{keywordflow}{while}\ (ejecutando)\ \textcolor{comment}{//Bucle\ principal\ de\ ejecución}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00037}00037\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00038}00038\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}lru>\ "{}});}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00039}00039\ \ \ \ \ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\%s"{}},\ comando);\ \textcolor{comment}{//Lee\ el\ comando\ ingresado\ por\ el\ usuario.}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00047}00047\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(comando,\ \textcolor{stringliteral}{"{}create"{}})\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00048}00048\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00049}00049\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00050}00050\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\%d"{}},\ \&n);}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cache\ =\ \mbox{\hyperlink{lru_8h_aa7ef86fad308723c0e747d432fcd394d}{create\_cache}}(n);\ \ \ \ \textcolor{comment}{//\ Si\ create\_cache\ devuelve\ NULL,\ ya\ ha\ impreso\ el\ error\ interno\ (capacidad\ <\ 5\ o\ malloc\ fallido).}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ !=\ NULL)}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00054}00054\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nCache\ creado\ con\ tamanyo:\ \%d\(\backslash\)n"{}},\ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a1fa2c8082161e747a687eed93878b406}{capacity}});}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00058}00058\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00061}00061\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nEl\ cache\ ya\ ha\ sido\ creado\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00062}00062\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00063}00063\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00071}00071\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(comando,\ \textcolor{stringliteral}{"{}add"{}})\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00072}00072\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00073}00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00074}00074\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00075}00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nError:\ El\ cache\ no\ ha\ sido\ creado.\ Use\ 'create\ <n>'.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00076}00076\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00077}00077\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00078}00078\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00079}00079\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00080}00080\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\ \%c"{}},\ \&letra);}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00081}00081\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{lru_8h_a4b835ce419aab66d8d26d2c155416e5d}{add\_data}}(cache,\ letra);}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00082}00082\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00083}00083\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00084}00084\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00091}00091\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(comando,\ \textcolor{stringliteral}{"{}search"{}})\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00092}00092\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00093}00093\ \ \ \ \ \ \ \ \ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\ \%c"{}},\ \&buscar\_letra);}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00094}00094\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ ==\ NULL)}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nError:\ El\ cache\ no\ ha\ sido\ creado.\ Use\ 'create\ <n>'.\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00099}00099\ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ posicion\ =\ \mbox{\hyperlink{lru_8h_abff5b8516d0df8c262f3551a125de27e}{search\_cache}}(cache,\ buscar\_letra);}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (posicion\ !=\ -\/1)}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nEl\ dato\ \%c\ esta\ presente\ en\ la\ posicion\ \%d\ del\ cache.\(\backslash\)n"{}},\ buscar\_letra,\ posicion);}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00104}00104\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{else}\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00107}00107\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nEl\ dato\ \%c\ no\ esta\ presente.\ Devuelve\ \%d.\(\backslash\)n"{}},\ buscar\_letra,\ posicion);}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00108}00108\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00109}00109\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00110}00110\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00111}00111\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00118}00118\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(comando,\ \textcolor{stringliteral}{"{}all"{}})\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00119}00119\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00120}00120\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{lru_8h_aae6f906d264c4d0147ca44675e82269a}{display\_cache}}(cache);}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00121}00121\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00122}00122\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00128}00128\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00129}00129\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(comando,\ \textcolor{stringliteral}{"{}get"{}})\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00130}00130\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00131}00131\ \ \ \ \ \ \ \ \ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\ \%c"{}},\ \&letra);}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00132}00132\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nSe\ ha\ utilizado:\ \%c\(\backslash\)n"{}},\ letra);}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00133}00133\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{lru_8h_aa8350dd503047035b6321cded626414f}{get\_data}}(cache,\ letra);}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00134}00134\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00135}00135\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00140}00140\ }
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00141}00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (strcmp(comando,\ \textcolor{stringliteral}{"{}exit"{}})\ ==\ 0)}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00142}00142\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00143}00143\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)nLiberando\ cache\ y\ saliendo\ del\ programa\(\backslash\)n"{}});}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00144}00144\ \ \ \ \ \ \ \ \ \ \ \ \ \mbox{\hyperlink{lru_8h_a953e550388e334ebc573f56c9974271b}{free\_cache}}(cache);}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00145}00145\ \ \ \ \ \ \ \ \ \ \ \ \ ejecutando\ =\ 0;}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00146}00146\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00147}00147\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00148}00148\ \ \ \ \ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{\Hypertarget{lru_8c_source_l00149}00149\ \}}
+
+\end{DoxyCode}

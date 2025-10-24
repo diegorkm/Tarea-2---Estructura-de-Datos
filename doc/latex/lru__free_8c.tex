@@ -1,0 +1,98 @@
+\doxysection{lru\+\_\+free.\+c File Reference}
+\hypertarget{lru__free_8c}{}\label{lru__free_8c}\index{lru\_free.c@{lru\_free.c}}
+
+
+Implementación de la función {\ttfamily free\+\_\+cache} para liberar toda la memoria dinámica de la caché LRU.  
+
+
+{\ttfamily \#include "{}lru.\+h"{}}\newline
+Include dependency graph for lru\+\_\+free.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lru__free_8c_a953e550388e334ebc573f56c9974271b}{free\+\_\+cache}} (\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*}cache)
+\begin{DoxyCompactList}\small\item\em Libera toda la memoria dinámica asociada a la caché LRU. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementación de la función {\ttfamily free\+\_\+cache} para liberar toda la memoria dinámica de la caché LRU. 
+
+Esta función es crítica para evitar fugas de memoria (memory leaks). Recorre la lista doblemente enlazada, liberando nodo por nodo, y finalmente libera la estructura principal \doxylink{struct_l_r_u_cache}{LRUCache}.
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyAuthor}{Authors}
+
+\begin{DoxyItemize}
+\item Diego Peralta
+\item Sebastian Ramirez
+\item Rodolfo Aguilar
+\item Benjamin Reyes 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24 de Octubre de 2025 
+\end{DoxyDate}
+
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{lru__free_8c_source}{lru\+\_\+free.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{lru__free_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{lru__free_8c_a953e550388e334ebc573f56c9974271b}\index{lru\_free.c@{lru\_free.c}!free\_cache@{free\_cache}}
+\index{free\_cache@{free\_cache}!lru\_free.c@{lru\_free.c}}
+\doxysubsubsection{\texorpdfstring{free\_cache()}{free\_cache()}}
+{\footnotesize\ttfamily \label{lru__free_8c_a953e550388e334ebc573f56c9974271b} 
+void free\+\_\+cache (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*}}]{cache}{}\end{DoxyParamCaption})}
+
+
+
+Libera toda la memoria dinámica asociada a la caché LRU. 
+
+Libera toda la memoria dinámica asociada al caché.
+
+La liberación se realiza en dos fases\+:
+\begin{DoxyEnumerate}
+\item Recorre la lista enlazada (desde el head) y libera cada nodo individualmente.
+\item Finalmente, libera la estructura \doxylink{struct_l_r_u_cache}{LRUCache} principal. Se incluye una verificación para asegurar que la función pueda ser llamada incluso si la caché nunca fue creada.
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em cache} & Puntero a la estructura \doxylink{struct_l_r_u_cache}{LRUCache} a liberar. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void No retorna valor. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lru__free_8c_source_l00031}{31}} of file \mbox{\hyperlink{lru__free_8c_source}{lru\+\_\+free.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032\ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//Verificación\ de\ seguridad,\ no\ intenta\ liberar\ si\ el\ cache\ es\ NULL}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ ==\ NULL)\ }
+\DoxyCodeLine{00035\ \ \ \ \ \{}
+\DoxyCodeLine{00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00037\ \ \ \ \ \}}
+\DoxyCodeLine{00038\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ current\ =\ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}};}
+\DoxyCodeLine{00039\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ next\_node\ =\ NULL;\ }
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{comment}{//Recorre\ y\ libera\ todos\ los\ nodos}}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordflow}{while}\ (current\ !=\ NULL)\ }
+\DoxyCodeLine{00043\ \ \ \ \ \{}
+\DoxyCodeLine{00044\ \ \ \ \ \ \ \ \ next\_node\ =\ current-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}};\ \textcolor{comment}{//\ Guardamos\ el\ puntero,\ antes\ de\ liberar\ el\ nodo\ actual.}}
+\DoxyCodeLine{00045\ \ \ \ \ \ \ \ \ free(current);\ \textcolor{comment}{//\ Liberamos\ memoria\ del\ nodo\ actual.}}
+\DoxyCodeLine{00046\ \ \ \ \ \ \ \ \ current\ =\ next\_node;\ \textcolor{comment}{//\ Avanzamos\ al\ siguiente\ nodo\ que\ guardamos.}}
+\DoxyCodeLine{00047\ \ \ \ \ \}}
+\DoxyCodeLine{00048\ \ \ \ \ free(cache);}
+\DoxyCodeLine{00049\ \}}
+
+\end{DoxyCode}

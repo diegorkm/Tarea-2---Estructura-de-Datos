@@ -1,0 +1,28 @@
+\doxysection{lru\+\_\+free.\+c}
+\hypertarget{lru__free_8c_source}{}\label{lru__free_8c_source}\mbox{\hyperlink{lru__free_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00016}00016\ }
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00017}00017\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lru_8h}{lru.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00018}00018\ }
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00031}\mbox{\hyperlink{lru_8h_a953e550388e334ebc573f56c9974271b}{00031}}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{lru__free_8c_a953e550388e334ebc573f56c9974271b}{free\_cache}}(\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}}*\ cache)\ }
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00032}00032\ \{}
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00033}00033\ \ \ \ \ \textcolor{comment}{//Verificación\ de\ seguridad,\ no\ intenta\ liberar\ si\ el\ cache\ es\ NULL}}
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00034}00034\ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ ==\ NULL)\ }
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00035}00035\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00036}00036\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00037}00037\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00038}00038\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ current\ =\ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}};}
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00039}00039\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ next\_node\ =\ NULL;\ }
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//Recorre\ y\ libera\ todos\ los\ nodos}}
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{while}\ (current\ !=\ NULL)\ }
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00043}00043\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00044}00044\ \ \ \ \ \ \ \ \ next\_node\ =\ current-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}};\ \textcolor{comment}{//\ Guardamos\ el\ puntero,\ antes\ de\ liberar\ el\ nodo\ actual.}}
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00045}00045\ \ \ \ \ \ \ \ \ free(current);\ \textcolor{comment}{//\ Liberamos\ memoria\ del\ nodo\ actual.}}
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00046}00046\ \ \ \ \ \ \ \ \ current\ =\ next\_node;\ \textcolor{comment}{//\ Avanzamos\ al\ siguiente\ nodo\ que\ guardamos.}}
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00047}00047\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00048}00048\ \ \ \ \ free(cache);}
+\DoxyCodeLine{\Hypertarget{lru__free_8c_source_l00049}00049\ \}}
+
+\end{DoxyCode}

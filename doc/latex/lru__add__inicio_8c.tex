@@ -1,0 +1,109 @@
+\doxysection{lru\+\_\+add\+\_\+inicio.\+c File Reference}
+\hypertarget{lru__add__inicio_8c}{}\label{lru__add__inicio_8c}\index{lru\_add\_inicio.c@{lru\_add\_inicio.c}}
+
+
+Implementación de la función para añadir o promover un nodo al inicio (MRU) de la caché LRU.  
+
+
+{\ttfamily \#include "{}lru.\+h"{}}\newline
+Include dependency graph for lru\+\_\+add\+\_\+inicio.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lru__add__inicio_8c_a6c981b179587f9bceb5c38c469d41948}{add\+\_\+inicio}} (\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*}cache, \mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}node)
+\begin{DoxyCompactList}\small\item\em Añade un nodo dado al inicio de la lista doblemente enlazada (MRU). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementación de la función para añadir o promover un nodo al inicio (MRU) de la caché LRU. 
+
+Esta función es fundamental para el algoritmo LRU, ya que cualquier nodo que es añadido o "{}usado"{} (promovido) debe ser colocado en la posición de máxima prioridad (head).
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyAuthor}{Authors}
+
+\begin{DoxyItemize}
+\item Diego Peralta
+\item Sebastian Ramirez
+\item Rodolfo Aguilar
+\item Benjamin Reyes 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24 de Octubre de 2025 
+\end{DoxyDate}
+
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{lru__add__inicio_8c_source}{lru\+\_\+add\+\_\+inicio.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{lru__add__inicio_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{lru__add__inicio_8c_a6c981b179587f9bceb5c38c469d41948}\index{lru\_add\_inicio.c@{lru\_add\_inicio.c}!add\_inicio@{add\_inicio}}
+\index{add\_inicio@{add\_inicio}!lru\_add\_inicio.c@{lru\_add\_inicio.c}}
+\doxysubsubsection{\texorpdfstring{add\_inicio()}{add\_inicio()}}
+{\footnotesize\ttfamily \label{lru__add__inicio_8c_a6c981b179587f9bceb5c38c469d41948} 
+void add\+\_\+inicio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*}}]{cache}{, }\item[{\mbox{\hyperlink{struct_node}{Node}} \texorpdfstring{$\ast$}{*}}]{node}{}\end{DoxyParamCaption})}
+
+
+
+Añade un nodo dado al inicio de la lista doblemente enlazada (MRU). 
+
+Añade un nodo al inicio de la lista doblemente enlazada (posición MRU).
+
+Esta función maneja cuatro casos principales\+:
+\begin{DoxyEnumerate}
+\item Conexión del nuevo nodo con el antiguo head.
+\item Actualización del puntero \textquotesingle{}prev\textquotesingle{} del antiguo head.
+\item Actualización del puntero \textquotesingle{}head\textquotesingle{} del caché.
+\item Manejo del caso en que la lista estaba vacía (actualización del tail).
+\end{DoxyEnumerate}
+
+
+\begin{DoxyParams}{Parameters}
+{\em cache} & Puntero a la estructura \doxylink{struct_l_r_u_cache}{LRUCache}. \\
+\hline
+{\em node} & Puntero al nodo que se va a insertar como nuevo head. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lru__add__inicio_8c_source_l00032}{32}} of file \mbox{\hyperlink{lru__add__inicio_8c_source}{lru\+\_\+add\+\_\+inicio.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//Conecta\ el\ nuevo\ nodo\ con\ la\ estructura\ existente.}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{comment}{//\ Se\ conectan\ los\ nodos\ a\ ambas\ direcciones}}
+\DoxyCodeLine{00036\ \ \ \ \ node-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}}\ =\ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}};}
+\DoxyCodeLine{00037\ \ \ \ \ node-\/>\mbox{\hyperlink{struct_node_aea9fefc3628c3ce98b967e8addf06e88}{prev}}\ =\ NULL;\ \textcolor{comment}{//El\ nuevo\ nodo\ siempre\ será\ el\ primero,\ por\ lo\ que\ su\ 'prev'\ es\ NULL.}}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{comment}{//Si\ hay\ elementos,\ el\ antiguo\ head\ apunta\ al\ nuevo\ nodo}}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordflow}{if}\ (cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}}\ !=\ NULL)\ }
+\DoxyCodeLine{00041\ \ \ \ \ \{}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}}-\/>\mbox{\hyperlink{struct_node_aea9fefc3628c3ce98b967e8addf06e88}{prev}}\ =\ node;}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{comment}{//\ Actualizamos\ el\ head\ del\ cache}}
+\DoxyCodeLine{00046\ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}}\ =\ node;}
+\DoxyCodeLine{00047\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{comment}{//\ si\ es\ el\ primer\ elemento,\ este\ tambien\ es\ el\ tail}}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordflow}{if}\ (cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_aa33cac6a0b065de0e3bf816e63c953f7}{tail}}\ ==\ NULL)\ }
+\DoxyCodeLine{00051\ \ \ \ \ \{}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_aa33cac6a0b065de0e3bf816e63c953f7}{tail}}\ =\ node;}
+\DoxyCodeLine{00053\ \ \ \ \ \}}
+\DoxyCodeLine{00054\ \ \ \ \ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{comment}{//incrementamos\ el\ tamaño\ actual}}
+\DoxyCodeLine{00056\ \ \ \ \ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a0bac014dc8e5262734b325d8a81b2ef2}{current\_size}}++;}
+\DoxyCodeLine{00057\ \}}
+
+\end{DoxyCode}

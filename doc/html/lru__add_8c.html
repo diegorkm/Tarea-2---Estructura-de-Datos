@@ -1,0 +1,275 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Caché LRU: Referencia del archivo lru_add.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Caché LRU<span id="projectnumber">&#160;v1.0</span>
+   </div>
+   <div id="projectbrief">Implementación de un sistema de Caché LRU (Least Recently Used) en C con lista doblemente enlazada</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','Buscar',true);
+  $(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('lru__add_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo lru_add.c</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Implementación de la función principal para añadir (o usar) un dato en la caché LRU.  
+<a href="#details">Más...</a></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="lru_8h_source.html">lru.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de dependencias incluidas en lru_add.c:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lru__add_8c__incl.png" border="0" usemap="#alru__add_8c" loading="lazy" alt=""/></div>
+<map name="alru__add_8c" id="alru__add_8c">
+<area shape="rect" title="Implementación de la función principal para añadir (o usar) un dato en la caché LRU." alt="" coords="84,5,158,32"/>
+<area shape="rect" href="lru_8h.html" title="Archivo de cabecera principal para el sistema de Caché LRU." alt="" coords="98,80,144,107"/>
+<area shape="poly" title=" " alt="" coords="124,33,124,64,118,64,118,33"/>
+<area shape="rect" title=" " alt="" coords="5,155,66,181"/>
+<area shape="poly" title=" " alt="" coords="108,109,63,147,60,143,104,105"/>
+<area shape="rect" title=" " alt="" coords="89,155,152,181"/>
+<area shape="poly" title=" " alt="" coords="124,107,124,139,118,139,118,107"/>
+<area shape="rect" title=" " alt="" coords="177,155,241,181"/>
+<area shape="poly" title=" " alt="" coords="138,105,184,143,180,147,134,109"/>
+</map>
+</div>
+</div>
+<p><a href="lru__add_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a4b835ce419aab66d8d26d2c155416e5d" id="r_a4b835ce419aab66d8d26d2c155416e5d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4b835ce419aab66d8d26d2c155416e5d">add_data</a> (<a class="el" href="struct_l_r_u_cache.html">LRUCache</a> *cache, char data)</td></tr>
+<tr class="memdesc:a4b835ce419aab66d8d26d2c155416e5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Añade un dato a la caché LRU, siguiendo la política de reemplazo.  <br /></td></tr>
+</table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
+<div class="textblock"><p>Implementación de la función principal para añadir (o usar) un dato en la caché LRU. </p>
+<p>Esta función aplica la lógica central del algoritmo LRU: maneja los "Cache Hits" (promoviendo el nodo al MRU) y los "Cache Misses" (añadiendo el nuevo nodo al MRU y eliminando el nodo LRU si la caché está llena).</p>
+<ul>
+<li><dl class="section author"><dt>Autores</dt><dd><ul>
+<li>Diego Peralta</li>
+<li>Sebastian Ramirez</li>
+<li>Rodolfo Aguilar</li>
+<li>Benjamin Reyes </li>
+</ul>
+</dd></dl>
+<dl class="section date"><dt>Fecha</dt><dd>24 de Octubre de 2025 </dd></dl>
+</li>
+</ul>
+
+<p class="definition">Definición en el archivo <a class="el" href="lru__add_8c_source.html">lru_add.c</a>.</p>
+</div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a4b835ce419aab66d8d26d2c155416e5d" name="a4b835ce419aab66d8d26d2c155416e5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b835ce419aab66d8d26d2c155416e5d">&#9670;&#160;</a></span>add_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void add_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_l_r_u_cache.html">LRUCache</a> *</td>          <td class="paramname"><span class="paramname"><em>cache</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Añade un dato a la caché LRU, siguiendo la política de reemplazo. </p>
+<p>Implementa la lógica de añadir un dato al caché.</p>
+<p>Los casos manejados son:</p><ol type="1">
+<li><b>Cache Hit:</b> Si el dato existe, se remueve de su posición y se inserta al inicio (MRU).</li>
+<li><b>Cache Miss (Lleno):</b> Si el dato no existe y la caché está llena, se elimina el nodo LRU (tail), y luego se añade el nuevo nodo al inicio (MRU).</li>
+<li><b>Cache Miss (Hay espacio):</b> Si el dato no existe y hay espacio, se añade directamente al inicio (MRU).</li>
+</ol>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cache</td><td>Puntero a la estructura <a class="el" href="struct_l_r_u_cache.html" title="Estructura principal que define la caché LRU.">LRUCache</a>. </td></tr>
+    <tr><td class="paramname">data</td><td>El carácter (letra) a añadir o usar. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>void No retorna valor. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="lru__add_8c_source.html#l00032">32</a> del archivo <a class="el" href="lru__add_8c_source.html">lru_add.c</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>{   <span class="comment">//Verificación inicial del cache</span></div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">if</span> (cache == NULL || cache-&gt;<a class="code hl_variable" href="struct_l_r_u_cache.html#a1fa2c8082161e747a687eed93878b406">capacity</a> == 0) </div>
+<div class="line"><span class="lineno">   35</span>    {</div>
+<div class="line"><span class="lineno">   36</span>        printf(<span class="stringliteral">&quot;Error: El cache no ha sido inicializado.\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   37</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   38</span>    }</div>
+<div class="line"><span class="lineno">   39</span>    <span class="comment">//Revisa si existe el nodo en el cache</span></div>
+<div class="line"><span class="lineno">   40</span>    <a class="code hl_struct" href="struct_node.html">Node</a>* existente = <a class="code hl_function" href="lru_8h.html#ab160f254cba53936d8fc1ae1046e7134">buscar_nodo</a>(cache, data);</div>
+<div class="line"><span class="lineno">   41</span>    <span class="keywordflow">if</span> (existente != NULL) <span class="comment">//Ya existe el elemento</span></div>
+<div class="line"><span class="lineno">   42</span>    {   <span class="comment">//Se quita de su posición y se mueve al inicio</span></div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_function" href="lru_8h.html#a7caadd271365ace085a1d10dc00b147a">remove_node</a>(cache, existente);</div>
+<div class="line"><span class="lineno">   44</span>        <a class="code hl_function" href="lru_8h.html#a6c981b179587f9bceb5c38c469d41948">add_inicio</a>(cache, existente);</div>
+<div class="line"><span class="lineno">   45</span>        printf(<span class="stringliteral">&quot;\nElemento %c ya existe, movido a inicio.\n&quot;</span>, data);</div>
+<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   47</span>    } </div>
+<div class="line"><span class="lineno">   48</span>    <span class="comment">//Si el cache esta lleno, requiere reemplazo</span></div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">if</span> (cache-&gt;<a class="code hl_variable" href="struct_l_r_u_cache.html#a0bac014dc8e5262734b325d8a81b2ef2">current_size</a> &gt;= cache-&gt;<a class="code hl_variable" href="struct_l_r_u_cache.html#a1fa2c8082161e747a687eed93878b406">capacity</a>) </div>
+<div class="line"><span class="lineno">   50</span>    {   <span class="comment">//Se identifica el LRU, que es el tail</span></div>
+<div class="line"><span class="lineno">   51</span>        <a class="code hl_struct" href="struct_node.html">Node</a>* lru = cache-&gt;<a class="code hl_variable" href="struct_l_r_u_cache.html#aa33cac6a0b065de0e3bf816e63c953f7">tail</a>;</div>
+<div class="line"><span class="lineno">   52</span>        <span class="keywordtype">char</span> dato_eliminado = lru-&gt;<a class="code hl_variable" href="struct_node.html#a94c9686e27f05bedd604d347d5bad449">data</a>;</div>
+<div class="line"><span class="lineno">   53</span>        <span class="comment">//Se desvincula el nodo LRU y se libera su memoria.</span></div>
+<div class="line"><span class="lineno">   54</span>        <a class="code hl_function" href="lru_8h.html#a7caadd271365ace085a1d10dc00b147a">remove_node</a>(cache, lru);</div>
+<div class="line"><span class="lineno">   55</span>        free(lru);</div>
+<div class="line"><span class="lineno">   56</span>        printf(<span class="stringliteral">&quot;\nElemento %c eliminado (cache lleno)\n&quot;</span>, dato_eliminado);</div>
+<div class="line"><span class="lineno">   57</span>    }</div>
+<div class="line"><span class="lineno">   58</span>    <span class="comment">//Crea un nuevo nodo (aplica si habia espacio o si se acaba de liberar espacio)</span></div>
+<div class="line"><span class="lineno">   59</span>    <a class="code hl_struct" href="struct_node.html">Node</a>* nuevo_nodo = <a class="code hl_function" href="lru_8h.html#aa183954c4a6cf9980694182e315b633e">create_node</a>(data);</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">if</span>(nuevo_nodo == NULL) </div>
+<div class="line"><span class="lineno">   61</span>    {</div>
+<div class="line"><span class="lineno">   62</span>        printf(<span class="stringliteral">&quot;Error al crear el nodo\n&quot;</span>);</div>
+<div class="line"><span class="lineno">   63</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   64</span>    }</div>
+<div class="line"><span class="lineno">   65</span>    <span class="comment">//El nuevo nodo se añade al inicio (MRU)</span></div>
+<div class="line"><span class="lineno">   66</span>    <a class="code hl_function" href="lru_8h.html#a6c981b179587f9bceb5c38c469d41948">add_inicio</a>(cache, nuevo_nodo);</div>
+<div class="line"><span class="lineno">   67</span>    printf(<span class="stringliteral">&quot;\nElemento %c anyadido al cache.\n&quot;</span>, data);</div>
+<div class="line"><span class="lineno">   68</span>}</div>
+<div class="ttc" id="alru_8h_html_a6c981b179587f9bceb5c38c469d41948"><div class="ttname"><a href="lru_8h.html#a6c981b179587f9bceb5c38c469d41948">add_inicio</a></div><div class="ttdeci">void add_inicio(LRUCache *cache, Node *node)</div><div class="ttdoc">Añade un nodo al inicio de la lista doblemente enlazada (posición MRU).</div><div class="ttdef"><b>Definition</b> <a href="lru__add__inicio_8c_source.html#l00032">lru_add_inicio.c:32</a></div></div>
+<div class="ttc" id="alru_8h_html_a7caadd271365ace085a1d10dc00b147a"><div class="ttname"><a href="lru_8h.html#a7caadd271365ace085a1d10dc00b147a">remove_node</a></div><div class="ttdeci">void remove_node(LRUCache *cache, Node *node)</div><div class="ttdoc">Elimina un nodo de su posición actual en la lista doblemente enlazada.</div><div class="ttdef"><b>Definition</b> <a href="lru__add__remove__node_8c_source.html#l00031">lru_add_remove_node.c:31</a></div></div>
+<div class="ttc" id="alru_8h_html_aa183954c4a6cf9980694182e315b633e"><div class="ttname"><a href="lru_8h.html#aa183954c4a6cf9980694182e315b633e">create_node</a></div><div class="ttdeci">Node * create_node(char data)</div><div class="ttdoc">Crea un nuevo nodo (Node) con el dato especificado.</div><div class="ttdef"><b>Definition</b> <a href="lru__node__create_8c_source.html#l00053">lru_node_create.c:53</a></div></div>
+<div class="ttc" id="alru_8h_html_ab160f254cba53936d8fc1ae1046e7134"><div class="ttname"><a href="lru_8h.html#ab160f254cba53936d8fc1ae1046e7134">buscar_nodo</a></div><div class="ttdeci">Node * buscar_nodo(LRUCache *cache, char data)</div><div class="ttdoc">Busca un nodo específico en la caché por su dato.</div><div class="ttdef"><b>Definition</b> <a href="lru__add__buscar__nodo_8c_source.html#l00028">lru_add_buscar_nodo.c:28</a></div></div>
+<div class="ttc" id="astruct_l_r_u_cache_html_a0bac014dc8e5262734b325d8a81b2ef2"><div class="ttname"><a href="struct_l_r_u_cache.html#a0bac014dc8e5262734b325d8a81b2ef2">LRUCache::current_size</a></div><div class="ttdeci">int current_size</div><div class="ttdef"><b>Definition</b> <a href="lru_8h_source.html#l00048">lru.h:48</a></div></div>
+<div class="ttc" id="astruct_l_r_u_cache_html_a1fa2c8082161e747a687eed93878b406"><div class="ttname"><a href="struct_l_r_u_cache.html#a1fa2c8082161e747a687eed93878b406">LRUCache::capacity</a></div><div class="ttdeci">int capacity</div><div class="ttdef"><b>Definition</b> <a href="lru_8h_source.html#l00047">lru.h:47</a></div></div>
+<div class="ttc" id="astruct_l_r_u_cache_html_aa33cac6a0b065de0e3bf816e63c953f7"><div class="ttname"><a href="struct_l_r_u_cache.html#aa33cac6a0b065de0e3bf816e63c953f7">LRUCache::tail</a></div><div class="ttdeci">Node * tail</div><div class="ttdef"><b>Definition</b> <a href="lru_8h_source.html#l00050">lru.h:50</a></div></div>
+<div class="ttc" id="astruct_node_html"><div class="ttname"><a href="struct_node.html">Node</a></div><div class="ttdoc">Representa un nodo en la lista doblemente enlazada de la caché.</div><div class="ttdef"><b>Definition</b> <a href="lru_8h_source.html#l00030">lru.h:31</a></div></div>
+<div class="ttc" id="astruct_node_html_a94c9686e27f05bedd604d347d5bad449"><div class="ttname"><a href="struct_node.html#a94c9686e27f05bedd604d347d5bad449">Node::data</a></div><div class="ttdeci">char data</div><div class="ttdef"><b>Definition</b> <a href="lru_8h_source.html#l00032">lru.h:32</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Hace referencia a <a class="el" href="lru__add__inicio_8c_source.html#l00032">add_inicio()</a>, <a class="el" href="lru__add__buscar__nodo_8c_source.html#l00028">buscar_nodo()</a>, <a class="el" href="lru_8h_source.html#l00047">LRUCache::capacity</a>, <a class="el" href="lru__node__create_8c_source.html#l00053">create_node()</a>, <a class="el" href="lru_8h_source.html#l00048">LRUCache::current_size</a>, <a class="el" href="lru_8h_source.html#l00032">Node::data</a>, <a class="el" href="lru__add__remove__node_8c_source.html#l00031">remove_node()</a> y <a class="el" href="lru_8h_source.html#l00050">LRUCache::tail</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="lru_8c_source.html#l00026">main()</a>.</p>
+<div id="dynsection-1" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas de esta función:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lru__add_8c_a4b835ce419aab66d8d26d2c155416e5d_cgraph.png" border="0" usemap="#alru__add_8c_a4b835ce419aab66d8d26d2c155416e5d_cgraph" loading="lazy" alt=""/></div>
+<map name="alru__add_8c_a4b835ce419aab66d8d26d2c155416e5d_cgraph" id="alru__add_8c_a4b835ce419aab66d8d26d2c155416e5d_cgraph">
+<area shape="rect" title="Añade un dato a la caché LRU, siguiendo la política de reemplazo." alt="" coords="5,81,80,108"/>
+<area shape="rect" href="lru__add__inicio_8c.html#a6c981b179587f9bceb5c38c469d41948" title="Añade un nodo al inicio de la lista doblemente enlazada (posición MRU)." alt="" coords="138,5,217,32"/>
+<area shape="poly" title=" " alt="" coords="65,78,126,42,134,37,137,42,129,46,67,83"/>
+<area shape="rect" href="lru__add__buscar__nodo_8c.html#ab160f254cba53936d8fc1ae1046e7134" title="Busca un nodo específico en la caché por su dato." alt="" coords="130,56,225,83"/>
+<area shape="poly" title=" " alt="" coords="80,85,114,79,115,84,81,90"/>
+<area shape="rect" href="lru__node__create_8c.html#aa183954c4a6cf9980694182e315b633e" title="Crea un nuevo nodo (Node) con el dato especificado." alt="" coords="131,107,224,133"/>
+<area shape="poly" title=" " alt="" coords="81,99,116,106,115,111,80,104"/>
+<area shape="rect" href="lru__add__remove__node_8c.html#a7caadd271365ace085a1d10dc00b147a" title="Elimina un nodo de su posición actual en la lista doblemente enlazada." alt="" coords="128,157,227,184"/>
+<area shape="poly" title=" " alt="" coords="67,106,129,143,137,147,134,152,126,148,65,111"/>
+</map>
+</div>
+<div id="dynsection-2" onclick="return dynsection.toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;"><span class="dynarrow"><span class="arrowhead closed"></span></span>Gráfico de llamadas a esta función:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="lru__add_8c_a4b835ce419aab66d8d26d2c155416e5d_icgraph.png" border="0" usemap="#alru__add_8c_a4b835ce419aab66d8d26d2c155416e5d_icgraph" loading="lazy" alt=""/></div>
+<map name="alru__add_8c_a4b835ce419aab66d8d26d2c155416e5d_icgraph" id="alru__add_8c_a4b835ce419aab66d8d26d2c155416e5d_icgraph">
+<area shape="rect" title="Añade un dato a la caché LRU, siguiendo la política de reemplazo." alt="" coords="103,5,177,32"/>
+<area shape="rect" href="lru_8c.html#a0ddf1224851353fc92bfbff6f499fa97" title="Punto de entrada principal del programa LRU." alt="" coords="5,5,55,32"/>
+<area shape="poly" title=" " alt="" coords="87,21,55,21,55,16,87,16"/>
+</map>
+</div>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="lru__add_8c.html">lru_add.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

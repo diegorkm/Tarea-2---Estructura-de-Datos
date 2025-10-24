@@ -1,0 +1,103 @@
+\doxysection{lru\+\_\+all.\+c File Reference}
+\hypertarget{lru__all_8c}{}\label{lru__all_8c}\index{lru\_all.c@{lru\_all.c}}
+
+
+Implementación de la función para mostrar el contenido completo de la caché LRU.  
+
+
+{\ttfamily \#include "{}lru.\+h"{}}\newline
+Include dependency graph for lru\+\_\+all.\+c\+:
+% FIG 0
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{lru__all_8c_aae6f906d264c4d0147ca44675e82269a}{display\+\_\+cache}} (\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*}cache)
+\begin{DoxyCompactList}\small\item\em Muestra el contenido completo de la caché, desde MRU (head) a LRU (tail). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementación de la función para mostrar el contenido completo de la caché LRU. 
+
+Esta función recorre la lista doblemente enlazada desde el head (MRU) hasta el tail (LRU) e imprime los datos de cada nodo, permitiendo al usuario visualizar el estado actual y el orden de prioridad del caché.
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyAuthor}{Authors}
+
+\begin{DoxyItemize}
+\item Diego Peralta
+\item Sebastian Ramirez
+\item Rodolfo Aguilar
+\item Benjamin Reyes 
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+24 de Octubre de 2025 
+\end{DoxyDate}
+
+\end{DoxyItemize}
+
+Definition in file \mbox{\hyperlink{lru__all_8c_source}{lru\+\_\+all.\+c}}.
+
+
+
+\label{doc-func-members}
+\Hypertarget{lru__all_8c_doc-func-members}
+\doxysubsection{Function Documentation}
+\Hypertarget{lru__all_8c_aae6f906d264c4d0147ca44675e82269a}\index{lru\_all.c@{lru\_all.c}!display\_cache@{display\_cache}}
+\index{display\_cache@{display\_cache}!lru\_all.c@{lru\_all.c}}
+\doxysubsubsection{\texorpdfstring{display\_cache()}{display\_cache()}}
+{\footnotesize\ttfamily \label{lru__all_8c_aae6f906d264c4d0147ca44675e82269a} 
+void display\+\_\+cache (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}} \texorpdfstring{$\ast$}{*}}]{cache}{}\end{DoxyParamCaption})}
+
+
+
+Muestra el contenido completo de la caché, desde MRU (head) a LRU (tail). 
+
+Muestra el contenido completo de la caché desde MRU a LRU.
+
+Recorre la lista enlazada e imprime la información de cada nodo. Si el caché está vacío o no ha sido inicializado, imprime un mensaje de error o estado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em cache} & Puntero a la estructura \doxylink{struct_l_r_u_cache}{LRUCache}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void No retorna valor. 
+\end{DoxyReturn}
+
+
+Definition at line \mbox{\hyperlink{lru__all_8c_source_l00029}{29}} of file \mbox{\hyperlink{lru__all_8c_source}{lru\+\_\+all.\+c}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00030\ \{}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordflow}{if}\ (cache\ ==\ NULL)\ \textcolor{comment}{//Verificación\ de\ errores}}
+\DoxyCodeLine{00032\ \ \ \ \ \{}
+\DoxyCodeLine{00033\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}No\ hay\ cache.\ Utiliza\ 'create\ <n>'\ primero.\(\backslash\)n"{}});}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00035\ \ \ \ \ \}}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ current\ =\ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}};}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordflow}{if}\ (current\ ==\ NULL)\ }
+\DoxyCodeLine{00040\ \ \ \ \ \{}
+\DoxyCodeLine{00041\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Contenido\ del\ cache:\ [vacio]\(\backslash\)n"{}});}
+\DoxyCodeLine{00042\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00043\ \ \ \ \ \}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Contenido\ del\ cache:\ "{}});}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{while}\ (current\ !=\ NULL)\ \textcolor{comment}{//\ Recorre\ de\ MRU\ (head)\ a\ LRU\ (tail).}}
+\DoxyCodeLine{00047\ \ \ \ \ \{}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}[\%c]"{}},\ current-\/>\mbox{\hyperlink{struct_node_a94c9686e27f05bedd604d347d5bad449}{data}});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (current-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}}\ !=\ NULL)\ }
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\ -\/\ "{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ current\ =\ current-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}};}
+\DoxyCodeLine{00054\ \ \ \ \ \}}
+\DoxyCodeLine{00055\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n"{}});}
+\DoxyCodeLine{00056\ \}}
+
+\end{DoxyCode}

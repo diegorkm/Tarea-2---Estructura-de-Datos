@@ -1,0 +1,25 @@
+\doxysection{lru\+\_\+add\+\_\+buscar\+\_\+nodo.\+c}
+\hypertarget{lru__add__buscar__nodo_8c_source}{}\label{lru__add__buscar__nodo_8c_source}\mbox{\hyperlink{lru__add__buscar__nodo_8c}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00013}00013\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{lru_8h}{lru.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00014}00014\ }
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00028}\mbox{\hyperlink{lru_8h_ab160f254cba53936d8fc1ae1046e7134}{00028}}\ \mbox{\hyperlink{struct_node}{Node}}*\ \mbox{\hyperlink{lru__add__buscar__nodo_8c_ab160f254cba53936d8fc1ae1046e7134}{buscar\_nodo}}(\mbox{\hyperlink{struct_l_r_u_cache}{LRUCache}}*\ cache,\ \textcolor{keywordtype}{char}\ data)}
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00029}00029\ \{}
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00030}00030\ \ \ \ \ \mbox{\hyperlink{struct_node}{Node}}*\ actual\ =\ cache-\/>\mbox{\hyperlink{struct_l_r_u_cache_a52a4ef73dc27ade730aa121870d40a50}{head}};}
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ Recorre\ la\ lista\ mientras\ 'actual'\ no\ sea\ NULL.}}
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00032}00032\ \ \ \ \ \textcolor{keywordflow}{while}\ (actual\ !=\ NULL)\ }
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00033}00033\ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00034}00034\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (actual-\/>\mbox{\hyperlink{struct_node_a94c9686e27f05bedd604d347d5bad449}{data}}\ ==\ data)\ }
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00035}00035\ \ \ \ \ \ \ \ \ \{}
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00036}00036\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ actual;\ \textcolor{comment}{//\ Retorna\ el\ nodo\ si\ encuentra\ el\ dato.}}
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00037}00037\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00038}00038\ }
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00039}00039\ \ \ \ \ \ \ \ \ actual\ =\ actual-\/>\mbox{\hyperlink{struct_node_af67b110ca1a258b793bf69d306929b22}{next}};}
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00040}00040\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00041}00041\ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;\ \textcolor{comment}{//\ Retorna\ NULL\ si\ el\ dato\ no\ fue\ encontrado.}}
+\DoxyCodeLine{\Hypertarget{lru__add__buscar__nodo_8c_source_l00042}00042\ \}}
+
+\end{DoxyCode}
